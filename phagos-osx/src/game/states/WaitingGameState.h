@@ -14,6 +14,11 @@ public:
   
   int foundPlayers;
   float timeStarted;
+  float timeComplete;
+  float playerTappedTime;
+  
+  float counterOrigin;
+  float targetCounterOrigin;
   
   void setup();
   void update();
@@ -22,5 +27,5 @@ public:
   
   void pressed(Player* player);
   void released(Player* player);
-  
+
 };

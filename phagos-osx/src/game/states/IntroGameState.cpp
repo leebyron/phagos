@@ -10,25 +10,27 @@
 #include "IntroGameState.h"
 #include "ofMain.h"
 #include "GameManager.h"
+#include "PhagosLogo.h"
 
 void IntroGameState::setup() {
   printf("intro game state setup\n");
   
   timeStarted = ofGetElapsedTimef();
   
-  ofBackground(0, 1, 5);
+  ofBackground(0, 0, 0);
 }
 
 void IntroGameState::update() {
   float elapsed = ofGetElapsedTimef() - timeStarted;
-  if (elapsed > 1.5) {
+  if (elapsed > 6.0) {
     manager->setState(WAITING_FOR_PLAYERS);
   }
+  
+  PhagosLogo::getLogo()->update();
 }
 
 void IntroGameState::draw() {
-  ofSetColor(0x000099);
-	ofDrawBitmapString("intro state", 110, 130);
+  PhagosLogo::getLogo()->draw(1);
 }
 
 void IntroGameState::exit() {

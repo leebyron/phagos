@@ -13,6 +13,7 @@ class OpeningGameState : public GameStateInstance {
 public:
   
   float timeStarted;
+  int frameNum;
   
   void setup();
   void update();

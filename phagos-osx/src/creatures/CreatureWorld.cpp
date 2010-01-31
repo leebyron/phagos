@@ -52,6 +52,7 @@ Creature* CreatureWorld::spawnCreature(Player* player,
   spawned->speed        = speed;
   
   spawned->setMass(1);
+  // TODO: move if player is rogue
   spawned->moveTo(player->origin);
 
   // count this as a reference increment

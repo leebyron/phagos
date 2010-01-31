@@ -13,7 +13,7 @@
 #include "ofxSDL.h"
 #include "phagosConstants.h"
 
-class phagosApp : public ofxSDLApp {
+class phagosApp : public ofxSDLApp {//public ofBaseApp {
 public:
 
   void setup();

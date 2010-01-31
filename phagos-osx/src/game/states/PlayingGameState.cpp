@@ -10,8 +10,11 @@
 #include "PlayingGameState.h"
 #include "ofMain.h"
 #include "GameManager.h"
+#include "PlayerManager.h"
 #include "CreatureWorld.h"
 #include "Creature.h"
+#include "Image.h"
+#include "phagosConstants.h"
 
 void PlayingGameState::setup() {
   printf("play game state setup\n");
@@ -24,18 +27,42 @@ void PlayingGameState::setup() {
 }
 
 void PlayingGameState::update() {
+  PlayerManager* playerManager = PlayerManager::getManager();
   
   float elapsed = ofGetElapsedTimef() - timeStarted;
   
   if (elapsed > 300) { // TODO: what else actually triggers this?
     manager->setState(GAME_OVER);
   }
+  
+  // update creature creator
+  Player* player;
+  for (int i = 0; i < playerManager->numPlayers; i++) {
+    player = playerManager->getPlayer(i);
+    if (player->creatureCreator->targetLuminocity > 0 &&
+        player->creatureCreator->remainingOoze > 0) {
+      player->creatureCreator->remainingOoze =
+        CLAMP(player->creatureCreator->remainingOoze - OOZE_USE_RATE, 0, 1);
+    } else if (player->creatureCreator->remainingOoze < 1) {
+      player->creatureCreator->remainingOoze =
+        CLAMP(player->creatureCreator->remainingOoze + OOZE_RECOVERY_RATE, 0, 1);
+    }
+    playerManager->getPlayer(i)->creatureCreator->update();
+  }
 
   CreatureWorld::getWorld()->updateWorld();
 }
 
 void PlayingGameState::draw() {
-  ofSetColor(0x6600FF);
+  GameManager* gameManager = GameManager::getManager();
+  PlayerManager* playerManager = PlayerManager::getManager();
+  
+  // draw the background
+  glPushMatrix();
+  glScalef(1024, 1024, 1);
+  glColor4f(1,1,1, 1);
+  drawTexture(gameManager->backgroundImage);
+  glPopMatrix();
   
   CreatureWorld* world = CreatureWorld::getWorld();
   Creature* creature;
@@ -45,8 +72,10 @@ void PlayingGameState::draw() {
     world->creatures[i]->draw();
   }
 
-  string state = "playing state";
-	ofDrawBitmapString(state, 140, 220);
+  // draw all players' creators
+  for (int i = 0; i < playerManager->numPlayers; i++) {
+    playerManager->getPlayer(i)->creatureCreator->draw();
+  }
 }
 
 void PlayingGameState::exit() {
@@ -54,12 +83,11 @@ void PlayingGameState::exit() {
 }
 
 void PlayingGameState::pressed(Player* player) {
-  //printf("pressed by %i\n", player->playerNum);
+  player->creatureCreator->targetLuminocity = 1.0;
 }
 
 void PlayingGameState::released(Player* player) {
-  //printf("released by %i\n", player->playerNum);
+  player->creatureCreator->targetLuminocity = 0.0;
 
   Creature* creature = CreatureWorld::getWorld()->spawnCreature(player, 10, 10, 10);
-  creature->addVelocity(ofRandomf(), ofRandomf(), 0);
 }

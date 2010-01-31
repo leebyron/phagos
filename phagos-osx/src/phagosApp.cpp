@@ -23,6 +23,11 @@ void phagosApp::setup() {
 	bSmooth = false;
 	ofSetWindowTitle("Phagos");
 
+  ofHideCursor();
+
+  // data file
+  ofSetDataPathRoot("data/");
+
 	ofSetFrameRate(60); // if vertical sync is off, we can go a bit fast... this caps the framerate at 60fps.
 }
 

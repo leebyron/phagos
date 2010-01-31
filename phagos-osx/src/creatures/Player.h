@@ -7,8 +7,10 @@
  *
  */
 
+#pragma once
 #include "ofxObjCPointer.h"
 #include "ofxMSAUtils.h"
+#include "CreatureCreator.h"
 
 class Player : public ofxObjCPointer {
 public:
@@ -20,6 +22,9 @@ public:
   int joyDeviceNum;
   msaColor color;
   ofPoint origin;
+  
+  // keep a pointer to your creature creator
+  CreatureCreator* creatureCreator;
   
   // maintain button state
   int joyButtonPressed;

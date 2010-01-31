@@ -11,11 +11,11 @@
 #include "OpeningGameState.h"
 #include "IntroGameState.h"
 #include "WaitingGameState.h"
-#include "PreparingGameState.h"
 #include "PlayingGameState.h"
 #include "OverGameState.h"
 #include "phagosConstants.h"
 #include "PlayerManager.h"
+#include "Image.h"
 
 static GameManager* instance = NULL;
 
@@ -27,8 +27,10 @@ GameManager* GameManager::getManager() {
 }
 
 GameManager::GameManager() {
-  currentState = INITIAL_STATE;
+  currentState = OPENING_SEQUENCE;
   currentStateInstance = NULL;
+  
+  backgroundImage = loadTexture("images/background.png", GL_BGR);
 }
 
 GameManager::~GameManager() {
@@ -38,7 +40,7 @@ void GameManager::update() {
   if (currentStateInstance) {
     currentStateInstance->update();
   } else {
-    setState(OPENING_SEQUENCE);
+    setState(currentState);
   }
 }
 
@@ -69,9 +71,6 @@ void GameManager::setState(GameState newState) {
   currentState = newState;
   
   switch (currentState) {
-    case INITIAL_STATE:
-      currentStateInstance = NULL;
-      break;
     case OPENING_SEQUENCE:
       currentStateInstance = new OpeningGameState();
       break;
@@ -80,9 +79,6 @@ void GameManager::setState(GameState newState) {
       break;
     case WAITING_FOR_PLAYERS:
       currentStateInstance = new WaitingGameState();
-      break;
-    case PREPARING_GAME:
-      currentStateInstance = new PreparingGameState();
       break;
     case PLAYING_GAME:
       currentStateInstance = new PlayingGameState();
