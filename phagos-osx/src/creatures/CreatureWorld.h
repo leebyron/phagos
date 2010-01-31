@@ -14,11 +14,12 @@ public:
   
   CreatureWorld();
   ~CreatureWorld();
+  
+  static CreatureWorld* getWorld();
 
   ofxMSAPhysics*  physics;
   vector<Creature*> creatures;
-  
-  void initWorld();
+
   void resetWorld();
   void updateWorld();
   Creature* spawnCreature(Player* player,

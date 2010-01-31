@@ -18,7 +18,10 @@ public:
   
   int playerNum;
   int joyDeviceNum;
-  msaColor creatureColor;
+  msaColor color;
   ofPoint origin;
+  
+  // maintain button state
+  int joyButtonPressed;
 
 };

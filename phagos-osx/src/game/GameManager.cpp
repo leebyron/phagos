@@ -14,21 +14,24 @@
 #include "PreparingGameState.h"
 #include "PlayingGameState.h"
 #include "OverGameState.h"
+#include "phagosConstants.h"
+#include "PlayerManager.h"
 
-static GameManager* gameManager;
+static GameManager* instance = NULL;
+
+GameManager* GameManager::getManager() {
+  if (instance == NULL) {
+    instance = new GameManager();
+  }
+  return instance;
+}
 
 GameManager::GameManager() {
   currentState = INITIAL_STATE;
   currentStateInstance = NULL;
-
-  gameManager = this;
 }
 
 GameManager::~GameManager() {
-}
-
-GameManager* GameManager::getManager() {
-  return gameManager;
 }
 
 void GameManager::update() {
@@ -42,6 +45,18 @@ void GameManager::update() {
 void GameManager::draw() {
   if (currentStateInstance) {
     currentStateInstance->draw();
+  }
+}
+
+void GameManager::pressed(Player* player) {
+  if (currentStateInstance) {
+    currentStateInstance->pressed(player);
+  }
+}
+
+void GameManager::released(Player* player) {
+  if (currentStateInstance) {
+    currentStateInstance->released(player);
   }
 }
 
@@ -84,5 +99,6 @@ void GameManager::setState(GameState newState) {
 }
 
 bool GameManager::isAcceptingNewPlayers() {
-  return (currentState == WAITING_FOR_PLAYERS);
+  return (currentState == WAITING_FOR_PLAYERS &&
+          PlayerManager::getManager()->numPlayers < MAX_PLAYERS);
 }

@@ -11,15 +11,19 @@
 #include "ofxObjCPointer.h"
 
 class GameManager;
+class Player;
 
 class GameStateInstance : public ofxObjCPointer {
 public:
 
   GameManager* manager;
-  
-  virtual void setup() {};
-  virtual void update() {};
-  virtual void draw() {};
-  virtual void exit() {};
-  
+
+  virtual void setup(){};
+  virtual void update(){};
+  virtual void draw(){};
+  virtual void exit(){};
+
+  virtual void pressed(Player* player){};
+  virtual void released(Player* player){};
+
 };

@@ -12,10 +12,9 @@
 class PlayerManager {
 public:
   
+  static PlayerManager* getManager();
   PlayerManager();
   ~PlayerManager();
-  
-  static PlayerManager* getManager();
   
   int       numPlayers;
   Player*   players[8];

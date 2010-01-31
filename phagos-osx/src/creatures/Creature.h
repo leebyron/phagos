@@ -16,10 +16,22 @@ public:
   Creature();
   ~Creature();
   
+  // owner
   Player* player;
+  
+  // Stats! the good stuff
   float   size;
   float   mouthSize;
   float   speed;
+  
+  // true if the creature is in the wild now
   bool    released;
+
+  // critter's motion
+  float   angle;
+  float   velocity;
+
+  void update();
+  void draw();
 
 };

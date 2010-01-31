@@ -9,16 +9,22 @@
 
 #include "CreatureWorld.h"
 
+static CreatureWorld* instance = NULL;
+
+CreatureWorld* CreatureWorld::getWorld() {
+  if (instance == NULL) {
+    instance = new CreatureWorld();
+  }
+  return instance;
+}
+
 CreatureWorld::CreatureWorld() {
+  physics = new ofxMSAPhysics();
+  physics->clear();
 }
 
 CreatureWorld::~CreatureWorld() {
   delete physics;
-}
-
-void CreatureWorld::initWorld() {
-  physics = new ofxMSAPhysics();
-  physics->clear();
 }
 
 void CreatureWorld::resetWorld() {
@@ -46,7 +52,7 @@ Creature* CreatureWorld::spawnCreature(Player* player,
   spawned->speed        = speed;
   
   spawned->setMass(1);
-  spawned->moveTo(player->origin.x, player->origin.y, 0);
+  spawned->moveTo(player->origin);
 
   // count this as a reference increment
   spawned->retain();

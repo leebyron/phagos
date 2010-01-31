@@ -3,7 +3,7 @@
  *  Phagos
  *
  *  This file is responsible for interfacing with events and delegating major
- *  actions to their respective classes
+ *  actions to the game manager
  *
  *  Created by Lee Byron on 1/29/10.
  *  Copyright 2010 Experimental Design Lab. All rights reserved.
@@ -11,6 +11,8 @@
  */
 
 #include "phagosApp.h"
+#include "GameManager.h"
+#include "PlayerManager.h"
 #include "Player.h"
 
 //--------------------------------------------------------------
@@ -19,37 +21,24 @@ void phagosApp::setup() {
 	ofSetCircleResolution(50);
 	ofBackground(0,0,0);
 	bSmooth = false;
-	ofSetWindowTitle("graphics example");
+	ofSetWindowTitle("Phagos");
 
 	ofSetFrameRate(60); // if vertical sync is off, we can go a bit fast... this caps the framerate at 60fps.
-
-  // create objects
-  gameManager     = new GameManager();
-  playerManager   = new PlayerManager();
-  world           = new CreatureWorld();
-
-  // set up the first time
-  world->initWorld();
 }
 
 //--------------------------------------------------------------
 void phagosApp::exit() {
 	printf("BYE FOREVER\n");
-
-  delete world;
-  delete playerManager;
 }
 
 //--------------------------------------------------------------
 void phagosApp::update() {
-  world->updateWorld();
-  gameManager->update();
+  GameManager::getManager()->update();
 }
 
 //--------------------------------------------------------------
 void phagosApp::draw() {
-  // draw the game!
-  gameManager->draw();
+  GameManager::getManager()->draw();
 }
 
 
@@ -67,6 +56,8 @@ void phagosApp::keyReleased(int key) {
 
 //--------------------------------------------------------------
 void phagosApp::joyButtonPressed(int device, int button) {
+  GameManager* gameManager     = GameManager::getManager();
+  PlayerManager* playerManager = PlayerManager::getManager();
   
   // if we're accepting new players, see if we can tap in.
   if (gameManager->isAcceptingNewPlayers()) {
@@ -75,22 +66,40 @@ void phagosApp::joyButtonPressed(int device, int button) {
       printf("just added player %i on joy %i\n", newPlayer->playerNum, newPlayer->joyDeviceNum);
     }
   }
-  
-  if (playerManager->hasPlayerForJoystick(device)) {
-    Player* player = playerManager->getPlayerForJoystick(device);
-    printf("player %i pressed button %i\n", player->playerNum, button);
-  }
 
-}
-
-//--------------------------------------------------------------
-void phagosApp::joyButtonReleased(int device, int button) {
   if (!(playerManager->hasPlayerForJoystick(device))) {
     return;
   }
   
   Player* player = playerManager->getPlayerForJoystick(device);
-  printf("player %i released button %i\n", player->playerNum, button);
+  
+  // only allow one button press at a time
+  if (player->joyButtonPressed) {
+    return;
+  }
+  player->joyButtonPressed = button;
+  
+  gameManager->pressed(player);
+}
+
+//--------------------------------------------------------------
+void phagosApp::joyButtonReleased(int device, int button) {
+  GameManager* gameManager     = GameManager::getManager();
+  PlayerManager* playerManager = PlayerManager::getManager();
+  
+  if (!(playerManager->hasPlayerForJoystick(device))) {
+    return;
+  }
+
+  Player* player = playerManager->getPlayerForJoystick(device);
+
+  // only listen to the release of the button we're tracking
+  if (player->joyButtonPressed != button) {
+    return;
+  }
+  player->joyButtonPressed = 0;
+
+  gameManager->released(player);
 }
 
 //--------------------------------------------------------------

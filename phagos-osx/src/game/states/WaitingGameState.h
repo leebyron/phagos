@@ -20,4 +20,7 @@ public:
   void draw();
   void exit();
   
+  void pressed(Player* player);
+  void released(Player* player);
+  
 };

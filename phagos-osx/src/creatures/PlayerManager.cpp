@@ -9,7 +9,14 @@
 
 #include "PlayerManager.h"
 
-static PlayerManager* playerManager;
+static PlayerManager* instance;
+
+PlayerManager* PlayerManager::getManager() {
+  if (instance == NULL) {
+    instance = new PlayerManager();
+  }
+  return instance;
+}
 
 PlayerManager::PlayerManager() {
   for (int i = 0; i < 8; i++) {
@@ -17,15 +24,9 @@ PlayerManager::PlayerManager() {
     playersByJoy[i] = NULL;
   }
   numPlayers = 0;
-  
-  playerManager = this;
 }
 
 PlayerManager::~PlayerManager() {
-}
-
-PlayerManager* PlayerManager::getManager() {
-  return playerManager;
 }
 
 void PlayerManager::clearPlayers() {

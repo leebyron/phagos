@@ -11,8 +11,7 @@
 #include "ofMain.h"
 #include "GameManager.h"
 #include "PlayerManager.h"
-
-#define COUNTDOWN_TIME 3.0
+#include "phagosConstants.h"
 
 void WaitingGameState::setup() {
   printf("waiting game state setup\n");
@@ -29,11 +28,20 @@ void WaitingGameState::setup() {
 void WaitingGameState::update() {
   if (foundPlayers != PlayerManager::getManager()->numPlayers) {
     foundPlayers = PlayerManager::getManager()->numPlayers;
-    timeStarted = ofGetElapsedTimef();
-  }
-  float elapsed = ofGetElapsedTimef() - timeStarted;
     
-  if (foundPlayers > 0 && elapsed > COUNTDOWN_TIME) {
+    float countdownTime = WAITING_COUNTDOWN_TIME;
+    if (foundPlayers == 1) {
+      countdownTime = WAITING_COUNTDOWN_TIME_1;
+    } else if (foundPlayers == MAX_PLAYERS) {
+      countdownTime = WAITING_COUNTDOWN_TIME_MAX;
+    }
+    
+    timeStarted = MAX(timeStarted, ofGetElapsedTimef() + countdownTime);
+  }
+  
+  float remaining = timeStarted - ofGetElapsedTimef();
+
+  if (foundPlayers > 0 && remaining <= 0) {
     manager->setState(PREPARING_GAME);
   }
 }
@@ -49,7 +57,7 @@ void WaitingGameState::draw() {
   
   if (foundPlayers) {
     state += " - ";
-    state += ofToString(COUNTDOWN_TIME - (ofGetElapsedTimef() - timeStarted), 2);
+    state += ofToString(timeStarted - ofGetElapsedTimef(), 2);
     state += "s";
   }
   
@@ -59,4 +67,12 @@ void WaitingGameState::draw() {
 
 void WaitingGameState::exit() {
   printf("waiting game state teardown\n");
+}
+
+void WaitingGameState::pressed(Player* player) {
+  printf("pressed by %i\n", player->playerNum);
+}
+
+void WaitingGameState::released(Player* player) {
+  printf("released by %i\n", player->playerNum);
 }

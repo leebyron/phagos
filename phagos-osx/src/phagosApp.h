@@ -11,16 +11,10 @@
 
 #include "ofMain.h"
 #include "ofxSDL.h"
-#include "GameManager.h"
-#include "PlayerManager.h"
-#include "CreatureWorld.h" 
+#include "phagosConstants.h"
 
 class phagosApp : public ofxSDLApp {
 public:
-
-  GameManager*    gameManager;
-  PlayerManager*  playerManager;
-  CreatureWorld*  world;
 
   void setup();
   void update();

@@ -270,13 +270,20 @@
 								<string>53558BE31114F8B60079191E</string>
 								<string>5354940A1114D02500A4CAE3</string>
 								<string>53548F981114241300A4CAE3</string>
+								<string>53558BB31114F5A40079191E</string>
+								<string>53558BB61114F6180079191E</string>
+								<string>53558B961114F5180079191E</string>
+								<string>53558B981114F52C0079191E</string>
+								<string>53558BA31114F52C0079191E</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
+									<integer>19</integer>
+									<integer>9</integer>
+									<integer>8</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -301,7 +308,7 @@
 							<real>346</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>44 59 1117 819 0 0 1440 878 </string>
+						<string>238 59 1117 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -319,7 +326,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>phagosApp.cpp</string>
+								<string>PlayingGameState.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,53 +334,58 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>phagosApp.cpp</string>
+										<string>PlayingGameState.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>53F5732411152C2900889420</string>
+										<string>53F574141115543600889420</string>
 										<key>history</key>
 										<array>
 											<string>53558BD91114F8560079191E</string>
 											<string>53558BDC1114F8560079191E</string>
-											<string>53558BDD1114F8560079191E</string>
 											<string>53558C2111150BB20079191E</string>
-											<string>53558C2311150BB20079191E</string>
-											<string>53558C2411150BB20079191E</string>
-											<string>53558C2511150BB20079191E</string>
 											<string>53558C2711150BB20079191E</string>
 											<string>53558C2811150BB20079191E</string>
-											<string>53558C2F11150BB20079191E</string>
-											<string>53558C6411150F960079191E</string>
 											<string>53558C7A111510750079191E</string>
-											<string>53558C891115113D0079191E</string>
 											<string>53F5720A11151DD300889420</string>
-											<string>53F572571115222C00889420</string>
-											<string>53F57289111523EF00889420</string>
-											<string>53F572C8111528F600889420</string>
 											<string>53F572ED11152BD300889420</string>
 											<string>53F572EE11152BD300889420</string>
 											<string>53F572EF11152BD300889420</string>
-											<string>53F572F011152BD300889420</string>
-											<string>53F572F111152BD300889420</string>
 											<string>53F572F211152BD300889420</string>
 											<string>53F572F311152BD300889420</string>
 											<string>53F572F411152BD300889420</string>
-											<string>53F572F511152BD300889420</string>
 											<string>53F572F611152BD300889420</string>
-											<string>53F572F711152BD300889420</string>
-											<string>53F572F811152BD300889420</string>
-											<string>53F572F911152BD300889420</string>
 											<string>53F572FA11152BD300889420</string>
-											<string>53F572FB11152BD300889420</string>
-											<string>53F572FC11152BD300889420</string>
-											<string>53F572FE11152BD300889420</string>
 											<string>53F5731F11152C2900889420</string>
 											<string>53F5732011152C2900889420</string>
 											<string>53F5732111152C2900889420</string>
-											<string>53F5732211152C2900889420</string>
-											<string>53F5732311152C2900889420</string>
-											<string>53F572FD11152BD300889420</string>
+											<string>53F5732C111530F200889420</string>
+											<string>53F5733C111533D500889420</string>
+											<string>53F5735F111537A900889420</string>
+											<string>53F5737B11153B0A00889420</string>
+											<string>53F5737C11153B0A00889420</string>
+											<string>53F5737F11153B0A00889420</string>
+											<string>53F5738011153B0A00889420</string>
+											<string>53F5738111153B0A00889420</string>
+											<string>53F5738211153B0A00889420</string>
+											<string>53F5738411153B0A00889420</string>
+											<string>53F5738511153B0A00889420</string>
+											<string>53F5738E11153B2600889420</string>
+											<string>53F573A21115414500889420</string>
+											<string>53F573A711154A9F00889420</string>
+											<string>53F573A811154A9F00889420</string>
+											<string>53F573A911154A9F00889420</string>
+											<string>53F573AA11154A9F00889420</string>
+											<string>53F573BD11154D1F00889420</string>
+											<string>53F573CD11154E0700889420</string>
+											<string>53F573CE11154E0700889420</string>
+											<string>53F573CF11154E0700889420</string>
+											<string>53F573D011154E0700889420</string>
+											<string>53F573D711154F5F00889420</string>
+											<string>53F573DC1115520E00889420</string>
+											<string>53F573EA1115533700889420</string>
+											<string>53F574121115543600889420</string>
+											<string>53F574131115543600889420</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -385,14 +397,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {749, 709}}</string>
+								<string>{{0, 0}, {749, 773}}</string>
 								<key>RubberWindowFrame</key>
-								<string>44 59 1117 819 0 0 1440 878 </string>
+								<string>238 59 1117 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>709pt</string>
+							<string>773pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -405,14 +417,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 714}, {749, 64}}</string>
+								<string>{{0, 778}, {749, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>44 59 1117 819 0 0 1440 878 </string>
+								<string>238 59 1117 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>64pt</string>
+							<string>0pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -571,6 +583,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>53F574151115543600889420</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>53F5721A11151DD300889420</string>
 		<string>53F5721B11151DD300889420</string>
@@ -580,7 +593,7 @@
 		<string>/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/Phagos.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>44 59 1117 819 0 0 1440 878 </string>
+	<string>238 59 1117 819 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -596,14 +609,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>OverGameState.cpp</string>
+								<string>phagosApp.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -620,6 +631,8 @@
 							<string>319pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -814,34 +827,34 @@
 							<key>Dock</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ofxSDLAppWindow.cpp</string>
+										<string>ofxMSAParticle.cpp</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{0, 0}, {781, 212}}</string>
+										<string>{{0, 0}, {794, 243}}</string>
 										<key>RubberWindowFrame</key>
-										<string>204 223 781 470 0 0 1440 878 </string>
+										<string>204 98 794 595 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXNavigatorGroup</string>
 									<key>Proportion</key>
-									<string>781pt</string>
+									<string>794pt</string>
 								</dict>
 							</array>
 							<key>Proportion</key>
-							<string>212pt</string>
+							<string>243pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -852,18 +865,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 217}, {781, 212}}</string>
+								<string>{{0, 248}, {794, 306}}</string>
 								<key>RubberWindowFrame</key>
-								<string>204 223 781 470 0 0 1440 878 </string>
+								<string>204 98 794 595 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXProjectFindModule</string>
 							<key>Proportion</key>
-							<string>212pt</string>
+							<string>306pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>429pt</string>
+					<string>554pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -883,7 +896,7 @@
 				<string>1CD0528E0623707200166675</string>
 			</array>
 			<key>WindowString</key>
-			<string>204 223 781 470 0 0 1440 878 </string>
+			<string>204 98 794 595 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
