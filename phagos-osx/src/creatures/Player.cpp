@@ -27,8 +27,20 @@ Player::Player(int playerNum, int joyNum) {
   color.setHSV(hues[joyNum], 1, 1);
   origin.x = playerNum == 0 ? 512 : 1200;
   origin.y = 650;
+
+  creaturesInPlay = 0;
+  hadBegun = false;
+  stillPlaying = true;
 }
 
 Player::~Player() {
   creatureCreator->release();
+}
+
+void Player::gameOver() {
+  stillPlaying = false;
+  creatureCreator->targetOpacity = 0.3;
+  creatureCreator->remainingOoze = 0;
+
+  // TODO: remove last creature in the creator ?
 }

@@ -44,16 +44,13 @@ CreatureWorld::~CreatureWorld() {
 
 void CreatureWorld::resetWorld() {
   // remove all critters
-/*  for (int i = 0; i < creatures.size(); i++) {
-    creatures[i]->release();
-  }*/
   list<Creature*>::iterator it;
   Creature* creature;
   for (it=creatures.begin(); it!=creatures.end(); ++it) {
     creature = *it;
     creature->release();
   }
-  creatures.clear();//erase(creatures.begin(), creatures.end());
+  creatures.clear();
   physics->clear();
 }
 

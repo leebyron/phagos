@@ -16,6 +16,13 @@ static PhagosLogo* instance = NULL;
 static int offsetX[12] = {121,125,258,258,399,399,528,564,665,691,807,806};
 static int offsetY[12] = {226,260,230,260,229,260,228,261,227,252,256,230};
 
+PhagosLogo* PhagosLogo::getLogo() {
+  if (instance == NULL) {
+    instance = new PhagosLogo();
+  }
+  return instance;
+}
+
 PhagosLogo::PhagosLogo() {
   string phagos = "phagos";
   string file;
@@ -33,20 +40,17 @@ PhagosLogo::PhagosLogo() {
     }
   }
 
-  for (int i = 0; i < 12; i++) {
-    offset[i] = ofRandom(0, 3);
-    frequency[i] = 0.3 + ofRandomuf();
-  }
+  reset();
 }
 
 PhagosLogo::~PhagosLogo() {
 }
 
-PhagosLogo* PhagosLogo::getLogo() {
-  if (instance == NULL) {
-    instance = new PhagosLogo();
+void PhagosLogo::reset() {
+  for (int i = 0; i < 12; i++) {
+    offset[i] = ofRandom(0, 3);
+    frequency[i] = 0.3 + ofRandomuf();
   }
-  return instance;
 }
 
 void PhagosLogo::update() {

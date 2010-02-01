@@ -21,6 +21,7 @@ public:
   float offset[12];
   float frequency[12];
 
+  void reset();
   void update();
   void draw(float alpha);
   

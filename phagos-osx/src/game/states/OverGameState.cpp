@@ -22,15 +22,13 @@ void OverGameState::setup() {
 void OverGameState::update() {
   float elapsed = ofGetElapsedTimef() - timeStarted;
   
-  if (elapsed > 1.5) {
+  if (elapsed > 3.0) {
     manager->setState(INTRO_SEQUENCE);
   }
 }
 
 void OverGameState::draw() {
-  ofSetColor(0x00FFAA);
-  string state = "game over";
-	ofDrawBitmapString(state, 150, 250);
+  // do nothing, glorious nothing.
 }
 
 void OverGameState::exit() {

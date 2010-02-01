@@ -38,7 +38,7 @@ public:
   float   velocity;
 
   void update();
-  void draw();
+  void draw(float opacity);
   
   void unleash();
 

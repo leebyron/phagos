@@ -34,8 +34,15 @@ public:
   float deltaLength;
   float force;
   
-  inline void update(ofxMSAParticle* p) {    
+  inline void update(ofxMSAParticle* p) {
+    bool inGame = GameManager::getManager()->currentState == PLAYING_GAME;
+    
 		restLength = radius - p->getRadius();
+    
+    if (!inGame) {
+      restLength *= 2;
+    }
+    
 		deltaDistance = (*p) - (center);
     
     // transform oval
@@ -51,7 +58,11 @@ public:
     }
     
     // nudge towards center
-    force += 0.25;
+    if (inGame) {
+      force += 0.20;
+    } else {
+      force += 0.05
+    }
 
     // un-transform oval
     deltaDistance.y *= 0.5;

@@ -23,10 +23,16 @@ public:
   msaColor color;
   ofPoint origin;
   
+  int creaturesInPlay;
+  bool hadBegun;
+  bool stillPlaying;
+  
   // keep a pointer to your creature creator
   CreatureCreator* creatureCreator;
   
   // maintain button state
   int joyButtonPressed;
+  
+  void gameOver();
 
 };

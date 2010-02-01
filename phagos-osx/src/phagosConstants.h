@@ -21,7 +21,7 @@
 #define WAITING_COUNTDOWN_TIME_MAX 1.5
 
 // initial game state, use for debugging to skip to steps
-#define INITIAL_GAME_STATE 0x2 // 0x1
+#define INITIAL_GAME_STATE 0x1 // 0x1
 
 
 
@@ -38,8 +38,8 @@
 #define RING_RADIUS 85.5
 
 // out of a total of 1 (=100%) per frame usage and recovery of ooze
-#define OOZE_USE_RATE 0.0015
-#define OOZE_RECOVERY_RATE 0.00085
+#define OOZE_USE_RATE 0.001
+#define OOZE_RECOVERY_RATE 0.001
 
 // the mag power of your creator
 #define CREATOR_MAGNIFICATION 0.4
@@ -83,15 +83,15 @@
 // eatingSizePointsPerFrame = hunger * CREATURE_EATING_SPEED + CREATURE_EATING_MIN
 // if you want to destroy a 100 size cell with a 100 hunger in 5 seconds:
 // 100size = 60fps * 5sec * 100hunger * 0.003eatingspeed
-#define CREATURE_EATING_SPEED 0.003
-#define CREATURE_EATING_MIN 0.007
+#define CREATURE_EATING_SPEED 0.0015
+#define CREATURE_EATING_MIN 0.003
 
 // determines the maximum angle we can still eat something at
 #define CREATURE_EATING_ANGLE 0.003
 #define CREATURE_EATING_ANGLE_MIN 0.04
 
 // determines how many of the points eaten are regained
-#define POINTS_EATEN_EFFICIENCY 0.6
+#define POINTS_EATEN_EFFICIENCY 0.4
 
 // the distance you can be from your target and still eat
 #define NOM_DISTANCE 6

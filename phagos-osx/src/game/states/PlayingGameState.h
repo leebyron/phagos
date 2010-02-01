@@ -14,6 +14,9 @@ public:
   
   float timeStarted;
   
+  bool gameWasWon;
+  float timeGameWasWon;
+  
   void setup();
   void update();
   void draw();

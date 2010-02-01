@@ -42,6 +42,10 @@ void Creature::update() {
   
   // if we're dead, destroy!
   if (wasKilled || size <= 0) {
+    player->creaturesInPlay--;
+    if (player->creaturesInPlay == 0) {
+      player->gameOver();
+    }
     released = false;
     kill();
     return;
@@ -147,18 +151,20 @@ void Creature::update() {
 }
 
 // called manually by our code to draw
-void Creature::draw() {
-  
+void Creature::draw(float opacity = 1.0) {
+  glEnable(GL_BLEND);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
   float physicalSize = getRadius();
   
   if (player) {
     glColor4f(player->color.r,
               player->color.g,
               player->color.b,
-              player->color.a);
+              opacity);
   } else {
     // rogue!
-    glColor4f(0.1, 0.1, 0.1, 0.5);
+    glColor4f(0.7, 0.7, 0.7, opacity);
   }
 
   // move to critter center
@@ -177,7 +183,7 @@ void Creature::draw() {
   // draw tail
   float tailX = -mouthX;
   float tailY = -mouthY;
-  float tailLength = speed * CREATURE_TAIL_LENGTH; // * physicalSize;
+  float tailLength = 1 + (speed * CREATURE_TAIL_LENGTH); // * physicalSize;
   ofLine(tailX, tailY, tailX * tailLength, tailY * tailLength);
   
   if (isEating) {
@@ -186,9 +192,13 @@ void Creature::draw() {
   }
 
   glPopMatrix();
+  
+  glDisable(GL_BLEND);
 }
 
 void Creature::unleash() {
   released = true;
   makeFree();
+  player->creaturesInPlay++;
+  player->hadBegun = true;
 }

@@ -49,7 +49,11 @@ void CreatureCreator::update() {
   targetX = lastPlayer == 0 ? 0.5 : ((float)player->playerNum / lastPlayer);
   targetX = round(RING_RADIUS * 1.5 + targetX * (ofGetWidth() - RING_RADIUS * 3));
   player->origin.x += CONTROLLER_ANIMATOR * (targetX - player->origin.x);
-  
+
+  if (!(player->stillPlaying)) {
+    return;
+  }
+
   // create monster!
   if (isPressed && creature) {
     numFramesSincePress++;
@@ -76,7 +80,7 @@ void CreatureCreator::update() {
 }
 
 void CreatureCreator::pressed() {
-  if (remainingOoze < 0.1) {
+  if (remainingOoze < 0.1 || !(player->stillPlaying)) {
     return;
   }
 
@@ -91,8 +95,10 @@ void CreatureCreator::pressed() {
 }
 
 void CreatureCreator::released() {
-  if (!creature || !isPressed) return;
-  
+  if (!creature || !isPressed || !(player->stillPlaying)) {
+    return;
+  }
+
   creature->stepsCompleted++;
   isPressed = false;
   
@@ -109,7 +115,7 @@ void CreatureCreator::draw() {
   glTranslatef(player->origin.x, player->origin.y, 0);
   
   // draws ring edges
-  glColor4f(1, 1, 1, 1);
+  glColor4f(1, 1, 1, player->stillPlaying ? opacity : 1);
   glPushMatrix();
   glTranslatef(-128, -128, 0);
   glScalef(256, 256, 1);
@@ -117,7 +123,7 @@ void CreatureCreator::draw() {
   glPopMatrix();
   
   // draws ring glow
-  glColor4f(1, 1, 1, luminocity);
+  glColor4f(1, 1, 1, opacity * luminocity);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE);
   glPushMatrix();
   glTranslatef(-128, -128, 0);
@@ -148,7 +154,7 @@ void CreatureCreator::draw() {
     glTranslatef(-creature->x * CREATOR_MAGNIFICATION, -creature->y * CREATOR_MAGNIFICATION, 0);
     glScalef(1 + CREATOR_MAGNIFICATION, 1 + CREATOR_MAGNIFICATION, 1);
     
-    creature->draw();
+    creature->draw(opacity);
     glPopMatrix();
     
     // turn off stenciling

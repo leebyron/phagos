@@ -18,6 +18,8 @@ void IntroGameState::setup() {
   timeStarted = ofGetElapsedTimef();
   
   ofBackground(0, 0, 0);
+  
+  PhagosLogo::getLogo()->reset();
 }
 
 void IntroGameState::update() {

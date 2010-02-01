@@ -284,13 +284,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
+									<integer>39</integer>
+									<integer>32</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {272, 723}}</string>
+							<string>{{0, 110}, {272, 723}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -327,7 +328,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>phagosConstants.h</string>
+								<string>EdgesForceField.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -335,11 +336,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>phagosConstants.h</string>
+										<string>EdgesForceField.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>53A14DCC1116B468004A5DA1</string>
+										<string>53A14E4A1116C611004A5DA1</string>
 										<key>history</key>
 										<array>
 											<string>53558BD91114F8560079191E</string>
@@ -351,22 +352,15 @@
 											<string>53F573AA11154A9F00889420</string>
 											<string>53F573CD11154E0700889420</string>
 											<string>53F573CE11154E0700889420</string>
-											<string>53F5744411155FDA00889420</string>
 											<string>53F574A611156B8D00889420</string>
 											<string>53F57535111573DF00889420</string>
 											<string>53F5763A11157F5300889420</string>
 											<string>53F576981115888A00889420</string>
-											<string>53F578491115A9FC00889420</string>
-											<string>53F578D61115AE6700889420</string>
-											<string>53F578FF1115B29B00889420</string>
-											<string>53F5794E1115B68900889420</string>
 											<string>53F579621115B82300889420</string>
-											<string>53F579631115B82300889420</string>
 											<string>53F579641115B82300889420</string>
 											<string>53F5796A1115B88100889420</string>
 											<string>53F5796E1115B9E200889420</string>
 											<string>53F5796F1115B9E200889420</string>
-											<string>53F579811115BAB700889420</string>
 											<string>53F579A61115BFEF00889420</string>
 											<string>53F579B71116331F00889420</string>
 											<string>53F579B91116331F00889420</string>
@@ -375,12 +369,6 @@
 											<string>53F579BF1116331F00889420</string>
 											<string>53F579C21116331F00889420</string>
 											<string>53F579D81116385300889420</string>
-											<string>53F579E01116390300889420</string>
-											<string>53F579E61116393500889420</string>
-											<string>53F579E71116393500889420</string>
-											<string>53F579E81116393500889420</string>
-											<string>53F57A4811163ECD00889420</string>
-											<string>53F57A4911163ECD00889420</string>
 											<string>53F57A9B111647BA00889420</string>
 											<string>53F57A9C111647BA00889420</string>
 											<string>53F57A9E111647BA00889420</string>
@@ -397,17 +385,30 @@
 											<string>53A14CD711169262004A5DA1</string>
 											<string>53A14CD811169262004A5DA1</string>
 											<string>53A14CDA11169262004A5DA1</string>
-											<string>53A14CDB11169262004A5DA1</string>
 											<string>53A14CDC11169262004A5DA1</string>
-											<string>53A14CDE11169262004A5DA1</string>
 											<string>53A14CE011169262004A5DA1</string>
-											<string>53A14CE111169262004A5DA1</string>
-											<string>53A14D2C11169A2D004A5DA1</string>
 											<string>53A14D3611169B5E004A5DA1</string>
-											<string>53A14D991116AB9A004A5DA1</string>
-											<string>53A14DB61116B13C004A5DA1</string>
-											<string>53A14DC81116B281004A5DA1</string>
-											<string>53A14DC91116B281004A5DA1</string>
+											<string>53A14DDA1116B999004A5DA1</string>
+											<string>53A14DDD1116B999004A5DA1</string>
+											<string>53A14DFC1116BBCA004A5DA1</string>
+											<string>53A14E101116BD4F004A5DA1</string>
+											<string>53A14E111116BD4F004A5DA1</string>
+											<string>53A14E191116BF25004A5DA1</string>
+											<string>53A14E1B1116BF25004A5DA1</string>
+											<string>53A14E291116C160004A5DA1</string>
+											<string>53A14E2B1116C160004A5DA1</string>
+											<string>53A14E2C1116C160004A5DA1</string>
+											<string>53A14E2D1116C160004A5DA1</string>
+											<string>53A14E2E1116C160004A5DA1</string>
+											<string>53A14E3D1116C3E8004A5DA1</string>
+											<string>53A14E421116C5BC004A5DA1</string>
+											<string>53A14E431116C5BC004A5DA1</string>
+											<string>53A14E441116C5BC004A5DA1</string>
+											<string>53A14E451116C5BC004A5DA1</string>
+											<string>53A14E461116C5BC004A5DA1</string>
+											<string>53A14E471116C5BC004A5DA1</string>
+											<string>53A14E481116C5BC004A5DA1</string>
+											<string>53A14CDE11169262004A5DA1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -609,8 +610,8 @@
 		<string>53A14CE811169262004A5DA1</string>
 		<string>53A14CE911169262004A5DA1</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>53548FD0111424B300A4CAE3</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>53548FD0111424B300A4CAE3</string>
 		<string>/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/Phagos.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -637,7 +638,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CollisionForceField.cpp</string>
+								<string>IntroGameState.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -706,7 +707,7 @@
 			<key>WindowToolGUID</key>
 			<string>53548FD0111424B300A4CAE3</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -848,14 +849,12 @@
 							<key>Dock</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PlayingGameState.cpp</string>
+										<string>CreatureCreator.cpp</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -876,6 +875,8 @@
 							<string>384pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

@@ -18,12 +18,14 @@
 
 void PlayingGameState::setup() {
   printf("play game state setup\n");
-  
+
   CreatureWorld::getWorld()->resetWorld();
-  
+
   timeStarted = ofGetElapsedTimef();
-  
-  ofBackground(0,0,0);
+  gameWasWon = false;
+  timeGameWasWon = 0;
+
+  ofBackground(0, 0, 0);
 }
 
 void PlayingGameState::update() {
@@ -31,7 +33,8 @@ void PlayingGameState::update() {
   
   float elapsed = ofGetElapsedTimef() - timeStarted;
   
-  if (elapsed > 300) { // TODO: what else actually triggers this?
+  if (//elapsed > 300 || // TODO: should 5 minutes actually end the game?
+      (gameWasWon && ofGetElapsedTimef() - timeGameWasWon > 12.0)) {
     manager->setState(GAME_OVER);
   }
   
@@ -39,10 +42,25 @@ void PlayingGameState::update() {
   Player* player;
   for (int i = 0; i < playerManager->numPlayers; i++) {
     player = playerManager->getPlayer(i);
-        playerManager->getPlayer(i)->creatureCreator->update();
+    player->creatureCreator->update();
   }
 
   CreatureWorld::getWorld()->updateWorld();
+
+  // is there a winning condition?
+  int playersAlive = 0;
+  for (int i = 0; i < playerManager->numPlayers; i++) {
+    player = playerManager->getPlayer(i);
+    if (player->stillPlaying) {
+      playersAlive++;
+    }
+  }
+
+  if (playersAlive == 1 && !gameWasWon) {
+    printf("Multiplayer win condition met.");
+    gameWasWon = true;
+    timeGameWasWon = ofGetElapsedTimef();
+  }
 }
 
 void PlayingGameState::draw() {
@@ -63,16 +81,22 @@ void PlayingGameState::draw() {
   Creature* creature;
   for (it=world->creatures.begin(); it!=world->creatures.end(); ++it) {
     creature = *it;
-    creature->draw();
+    creature->draw(1.0);
   }
-/*  
-  for (int i = 0; i < world->creatures.size(); i++) {
-    world->creatures[i]->draw();
-  }
-*/
+  
   // draw all players' creators
   for (int i = 0; i < playerManager->numPlayers; i++) {
     playerManager->getPlayer(i)->creatureCreator->draw();
+  }
+  
+  // someone win? fade to black
+  if (gameWasWon) {
+    float fadeToBlack = sqAni((ofGetElapsedTimef() - (timeGameWasWon + 9.0)) / 3.0);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glColor4f(0, 0, 0, fadeToBlack);
+    ofRect(0, 0, ofGetWidth(), ofGetHeight());
+    glDisable(GL_BLEND);
   }
 }
 
