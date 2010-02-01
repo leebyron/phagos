@@ -7,18 +7,25 @@
  *
  */
 
-#import "Creature.h"
+#pragma once
+
+#include "Creature.h"
+#include "ofxMSAPhysics.h"
+#include "EdgesForceField.h"
+#include "CollisionForceField.h"
 
 class CreatureWorld {
 public:
-  
+
+  static CreatureWorld* getWorld();
   CreatureWorld();
   ~CreatureWorld();
-  
-  static CreatureWorld* getWorld();
 
   ofxMSAPhysics*  physics;
   vector<Creature*> creatures;
+  
+  EdgesForceField* edgesForceField;
+  CollisionForceField* collisionForceField;
 
   void resetWorld();
   void updateWorld();

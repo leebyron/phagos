@@ -27,7 +27,7 @@ GameManager* GameManager::getManager() {
 }
 
 GameManager::GameManager() {
-  currentState = OPENING_SEQUENCE;
+  currentState = INITIAL_GAME_STATE;
   currentStateInstance = NULL;
   
   backgroundImage = loadTexture("images/background.png", GL_BGR);

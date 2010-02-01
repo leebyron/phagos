@@ -21,6 +21,20 @@ CreatureWorld* CreatureWorld::getWorld() {
 CreatureWorld::CreatureWorld() {
   physics = new ofxMSAPhysics();
   physics->clear();
+  
+  float w = ofGetWidth();
+  float h = ofGetHeight();
+  physics->setWorldSize(ofPoint(-w/2, -h/2, -w/2), ofPoint(w * 1.5, h * 1.5, w/2));
+  
+  physics->setDrag(0.975);
+  physics->disableCollision();
+  physics->set2D(true);
+
+  edgesForceField = new EdgesForceField();
+  physics->addUpdater(edgesForceField);
+  
+  collisionForceField = new CollisionForceField();
+  physics->addWorldUpdater(collisionForceField);
 }
 
 CreatureWorld::~CreatureWorld() {

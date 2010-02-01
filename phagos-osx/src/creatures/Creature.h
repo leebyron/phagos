@@ -7,6 +7,7 @@
  *
  */
 
+#pragma once
 #include "ofxMSAPhysics.h"
 #include "Player.h"
 

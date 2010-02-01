@@ -1,14 +1,12 @@
 
 #include "ofMain.h"
 #include "ofxSDL.h"
-//#include "ofAppGlutWindow.h"
 #include "phagosApp.h"
 
 //========================================================================
 int main(int argc, char*argv[]) {
 
   ofxSDLAppWindow window;
-  //ofAppGlutWindow window;
   
 	ofSetupOpenGL(&window, 1024, 768, OF_WINDOW);			// <-------- setup the GL context
 

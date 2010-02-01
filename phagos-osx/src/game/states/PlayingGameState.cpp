@@ -89,5 +89,8 @@ void PlayingGameState::pressed(Player* player) {
 void PlayingGameState::released(Player* player) {
   player->creatureCreator->targetLuminocity = 0.0;
 
-  Creature* creature = CreatureWorld::getWorld()->spawnCreature(player, 10, 10, 10);
+  Creature* creature = CreatureWorld::getWorld()->spawnCreature(player,
+                                                                ofRandom(1, 100),
+                                                                ofRandom(1, 100),
+                                                                ofRandom(1, 100));
 }

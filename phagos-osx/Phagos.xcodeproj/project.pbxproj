@@ -46,6 +46,7 @@
 		53F576941115886700889420 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5354901E1114281000A4CAE3 /* SDLMain.m */; };
 		53F57791111597EC00889420 /* phagosConstants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53F57790111597EC00889420 /* phagosConstants.cpp */; };
 		53F577D611159EA000889420 /* PhagosLogo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53F577D511159EA000889420 /* PhagosLogo.cpp */; };
+		53F57B291116567900889420 /* CollisionForceField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53F57B281116567900889420 /* CollisionForceField.cpp */; };
 		E45BE2E40E8CC69C009D7055 /* rtAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE2E30E8CC69C009D7055 /* rtAudio.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
@@ -180,6 +181,10 @@
 		53F57790111597EC00889420 /* phagosConstants.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = phagosConstants.cpp; sourceTree = "<group>"; };
 		53F577D411159EA000889420 /* PhagosLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhagosLogo.h; sourceTree = "<group>"; };
 		53F577D511159EA000889420 /* PhagosLogo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhagosLogo.cpp; sourceTree = "<group>"; };
+		53F579B611162FCC00889420 /* EdgesForceField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgesForceField.h; sourceTree = "<group>"; };
+		53F57B1411164FFA00889420 /* CollisionForceField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionForceField.h; sourceTree = "<group>"; };
+		53F57B281116567900889420 /* CollisionForceField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollisionForceField.cpp; sourceTree = "<group>"; };
+		53F57BC2111662DD00889420 /* ofxMSAPhysicsUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMSAPhysicsUpdater.h; sourceTree = "<group>"; };
 		E45BE0390E8CC647009D7055 /* FreeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeImage.h; sourceTree = "<group>"; };
 		E45BE03F0E8CC650009D7055 /* fmod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod.h; sourceTree = "<group>"; };
 		E45BE0400E8CC650009D7055 /* fmod.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fmod.hpp; sourceTree = "<group>"; };
@@ -343,6 +348,7 @@
 				53558B9A1114F52C0079191E /* ofxMSAParticleDrawer.h */,
 				53558B9B1114F52C0079191E /* ofxMSAParticleUpdater.h */,
 				53558B9C1114F52C0079191E /* ofxMSAPhysicsCallbacks.h */,
+				53F57BC2111662DD00889420 /* ofxMSAPhysicsUpdater.h */,
 			);
 			path = Callbacks;
 			sourceTree = "<group>";
@@ -409,6 +415,9 @@
 				53558BE81114F95A0079191E /* CreatureWorld.cpp */,
 				53F5742E1115588000889420 /* CreatureCreator.h */,
 				53F5742F1115588000889420 /* CreatureCreator.cpp */,
+				53F579B611162FCC00889420 /* EdgesForceField.h */,
+				53F57B1411164FFA00889420 /* CollisionForceField.h */,
+				53F57B281116567900889420 /* CollisionForceField.cpp */,
 			);
 			path = creatures;
 			sourceTree = "<group>";
@@ -861,6 +870,7 @@
 				53F5763611157EB300889420 /* Image.cpp in Sources */,
 				53F57791111597EC00889420 /* phagosConstants.cpp in Sources */,
 				53F577D611159EA000889420 /* PhagosLogo.cpp in Sources */,
+				53F57B291116567900889420 /* CollisionForceField.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
