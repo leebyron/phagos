@@ -340,7 +340,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>53A14E9D1116D1D6004A5DA1</string>
+										<string>53A14EAF1116D469004A5DA1</string>
 										<key>history</key>
 										<array>
 											<string>53558BD91114F8560079191E</string>
@@ -611,9 +611,9 @@
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>53A14CE811169262004A5DA1</string>
 		<string>53A14CE911169262004A5DA1</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>53548FD0111424B300A4CAE3</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/Phagos.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -709,7 +709,7 @@
 			<key>WindowToolGUID</key>
 			<string>53548FD0111424B300A4CAE3</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -990,7 +990,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
