@@ -28,28 +28,35 @@ public:
   float height;
   float radius;
   
+  float restLength;
+  ofPoint deltaDistance;
+  float deltaLength2;
+  float deltaLength;
+  float force;
+  
   inline void update(ofxMSAParticle* p) {    
-		float restLength = radius - p->getRadius();
-		ofPoint delta = (*p) - (center);
+		restLength = radius - p->getRadius();
+		deltaDistance = (*p) - (center);
     
     // transform oval
-    delta.y *= 2.0;
-    float force;
+    deltaDistance.y *= 2.0;
 
-		float deltaLength2 = msaLengthSquared(delta);
+    force = 0;
+		deltaLength2 = msaLengthSquared(deltaDistance);
 		if (deltaLength2 < restLength * restLength) {
+      ;
     } else {
-      float deltaLength = sqrt(deltaLength2); //msaFastInvSquareRoot(deltaLength2);	// TODO: fast approximation of square root (1st order Taylor-expansion at a neighborhood of the rest length r (one Newton-Raphson iteration with initial guess r))
+      deltaLength = sqrt(deltaLength2); //msaFastInvSquareRoot(deltaLength2);	// TODO: fast approximation of square root (1st order Taylor-expansion at a neighborhood of the rest length r (one Newton-Raphson iteration with initial guess r))
       force = (deltaLength - restLength) / (deltaLength);
     }
     
     // nudge towards center
     force += 0.1;
-    
+
     // un-transform oval
-    delta.y *= 0.5;
+    deltaDistance.y *= 0.5;
     
-		*p += delta * (1 * -force) * EDGE_FIELD_STRENGTH;
+		*p += deltaDistance * (1 * -force) * EDGE_FIELD_STRENGTH;
   }
   
 };

@@ -234,16 +234,16 @@
 	};
 	53558BE41114F8D00079191E /* Creature.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {781, 555}}";
-			sepNavSelRange = "{201, 0}";
-			sepNavVisRange = "{0, 489}";
+			sepNavIntBoundsRect = "{{0, 0}, {781, 694}}";
+			sepNavSelRange = "{376, 0}";
+			sepNavVisRange = "{0, 560}";
 		};
 	};
 	53558BE51114F8D00079191E /* Creature.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {781, 1785}}";
-			sepNavSelRange = "{2557, 0}";
-			sepNavVisRange = "{2177, 683}";
+			sepNavIntBoundsRect = "{{0, 0}, {781, 1875}}";
+			sepNavSelRange = "{2418, 0}";
+			sepNavVisRange = "{1865, 1116}";
 		};
 	};
 	53558BE71114F95A0079191E /* CreatureWorld.h */ = {
@@ -255,9 +255,9 @@
 	};
 	53558BE81114F95A0079191E /* CreatureWorld.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 1230}}";
-			sepNavSelRange = "{847, 0}";
-			sepNavVisRange = "{434, 505}";
+			sepNavIntBoundsRect = "{{0, 0}, {781, 1260}}";
+			sepNavSelRange = "{659, 0}";
+			sepNavVisRange = "{148, 1031}";
 		};
 	};
 	53558BEA1114FDC70079191E /* Player.h */ = {
@@ -350,15 +350,85 @@
 		path = "/Developer/SDKs/MacOSX10.5.sdk/usr/include/c++/4.0.0/iostream";
 		sourceTree = "<absolute>";
 	};
-	53D83D6A11166C3900D228ED /* PBXTextBookmark */ = {
+	53D83D7411166E0A00D228ED /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 53558BE41114F8D00079191E /* Creature.h */;
+		name = "Creature.h: 25";
+		rLen = 0;
+		rLoc = 376;
+		rType = 0;
+		vrLen = 560;
+		vrLoc = 0;
+	};
+	53D83DA0111670DA00D228ED /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 53558BE51114F8D00079191E /* Creature.cpp */;
-		name = "Creature.cpp: 112";
+		name = "Creature.cpp: 104";
 		rLen = 0;
-		rLoc = 2557;
+		rLoc = 2418;
 		rType = 0;
-		vrLen = 683;
-		vrLoc = 2177;
+		vrLen = 1116;
+		vrLoc = 1865;
+	};
+	53D83DA1111670DA00D228ED /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 53F5742F1115588000889420 /* CreatureCreator.cpp */;
+		name = "CreatureCreator.cpp: 74";
+		rLen = 0;
+		rLoc = 1940;
+		rType = 0;
+		vrLen = 1320;
+		vrLoc = 0;
+	};
+	53D83DA2111670DA00D228ED /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 53558BE81114F95A0079191E /* CreatureWorld.cpp */;
+		name = "CreatureWorld.cpp: 32";
+		rLen = 0;
+		rLoc = 659;
+		rType = 0;
+		vrLen = 1031;
+		vrLoc = 148;
+	};
+	53D83DA3111670DA00D228ED /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 53F57B281116567900889420 /* CollisionForceField.cpp */;
+		name = "CollisionForceField.cpp: 42";
+		rLen = 16;
+		rLoc = 1295;
+		rType = 0;
+		vrLen = 1460;
+		vrLoc = 31;
+	};
+	53D83DA4111670DA00D228ED /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 53F579B611162FCC00889420 /* EdgesForceField.h */;
+		name = "EdgesForceField.h: 54";
+		rLen = 19;
+		rLoc = 1361;
+		rType = 0;
+		vrLen = 1227;
+		vrLoc = 162;
+	};
+	53D83DA5111670DA00D228ED /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 53F5734A111535B700889420 /* phagosConstants.h */;
+		name = "phagosConstants.h: 49";
+		rLen = 0;
+		rLoc = 1327;
+		rType = 0;
+		vrLen = 1226;
+		vrLoc = 378;
+	};
+	53D83DB61116718C00D228ED /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 53F5734A111535B700889420 /* phagosConstants.h */;
+		name = "phagosConstants.h: 61";
+		rLen = 0;
+		rLoc = 1497;
+		rType = 0;
+		vrLen = 1161;
+		vrLoc = 469;
 	};
 	53F571C41115124900889420 /* GameManager.h */ = {
 		uiCtxt = {
@@ -493,9 +563,9 @@
 	};
 	53F5734A111535B700889420 /* phagosConstants.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {781, 945}}";
-			sepNavSelRange = "{957, 0}";
-			sepNavVisRange = "{687, 850}";
+			sepNavIntBoundsRect = "{{0, 0}, {781, 1020}}";
+			sepNavSelRange = "{1497, 0}";
+			sepNavVisRange = "{469, 1161}";
 		};
 	};
 	53F573AA11154A9F00889420 /* PBXTextBookmark */ = {
@@ -537,9 +607,9 @@
 	};
 	53F5742F1115588000889420 /* CreatureCreator.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {781, 1545}}";
+			sepNavIntBoundsRect = "{{0, 0}, {781, 1485}}";
 			sepNavSelRange = "{1940, 0}";
-			sepNavVisRange = "{38, 704}";
+			sepNavVisRange = "{0, 1320}";
 		};
 	};
 	53F5744411155FDA00889420 /* PBXTextBookmark */ = {
@@ -773,9 +843,9 @@
 	};
 	53F579B611162FCC00889420 /* EdgesForceField.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1734, 840}}";
-			sepNavSelRange = "{284, 0}";
-			sepNavVisRange = "{189, 323}";
+			sepNavIntBoundsRect = "{{0, 0}, {1734, 870}}";
+			sepNavSelRange = "{1361, 19}";
+			sepNavVisRange = "{162, 1227}";
 		};
 	};
 	53F579B71116331F00889420 /* PBXTextBookmark */ = {
@@ -1001,30 +1071,10 @@
 	};
 	53F57B281116567900889420 /* CollisionForceField.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1433, 720}}";
-			sepNavSelRange = "{327, 0}";
-			sepNavVisRange = "{266, 1144}";
+			sepNavIntBoundsRect = "{{0, 0}, {1433, 735}}";
+			sepNavSelRange = "{1295, 16}";
+			sepNavVisRange = "{31, 1460}";
 		};
-	};
-	53F57B2C111656CB00889420 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 53F579B611162FCC00889420 /* EdgesForceField.h */;
-		name = "EdgesForceField.h: 1";
-		rLen = 1367;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 851;
-		vrLoc = 516;
-	};
-	53F57B2E111656CB00889420 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 53F5742F1115588000889420 /* CreatureCreator.cpp */;
-		name = "CreatureCreator.cpp: 74";
-		rLen = 0;
-		rLoc = 1940;
-		rType = 0;
-		vrLen = 704;
-		vrLoc = 38;
 	};
 	53F57B2F111656CB00889420 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1033,7 +1083,7 @@
 		rLen = 19;
 		rLoc = 500;
 		rType = 0;
-		vrLen = 593;
+		vrLen = 590;
 		vrLoc = 139;
 	};
 	53F57B7811165DDF00889420 /* PBXTextBookmark */ = {
@@ -1123,16 +1173,6 @@
 		vrLen = 583;
 		vrLoc = 2925;
 	};
-	53F57BDD1116644800889420 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 53558BE81114F95A0079191E /* CreatureWorld.cpp */;
-		name = "CreatureWorld.cpp: 43";
-		rLen = 0;
-		rLoc = 903;
-		rType = 0;
-		vrLen = 718;
-		vrLoc = 326;
-	};
 	53F57BDE1116644800889420 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 53F57B1411164FFA00889420 /* CollisionForceField.h */;
@@ -1142,56 +1182,6 @@
 		rType = 0;
 		vrLen = 421;
 		vrLoc = 145;
-	};
-	53F57BEA1116648500889420 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 53F57B281116567900889420 /* CollisionForceField.cpp */;
-		name = "CollisionForceField.cpp: 16";
-		rLen = 0;
-		rLoc = 327;
-		rType = 0;
-		vrLen = 1144;
-		vrLoc = 266;
-	};
-	53F57BF6111665BD00889420 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 53558BE41114F8D00079191E /* Creature.h */;
-		name = "Creature.h: 12";
-		rLen = 0;
-		rLoc = 201;
-		rType = 0;
-		vrLen = 489;
-		vrLoc = 0;
-	};
-	53F57C0D111668D700889420 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 53F5734A111535B700889420 /* phagosConstants.h */;
-		name = "phagosConstants.h: 37";
-		rLen = 0;
-		rLoc = 957;
-		rType = 0;
-		vrLen = 850;
-		vrLoc = 687;
-	};
-	53F57C1711166AA400889420 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 53558BE51114F8D00079191E /* Creature.cpp */;
-		name = "Creature.cpp: 40";
-		rLen = 0;
-		rLoc = 758;
-		rType = 0;
-		vrLen = 883;
-		vrLoc = 464;
-	};
-	53F57C1811166AA400889420 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 53558BE51114F8D00079191E /* Creature.cpp */;
-		name = "Creature.cpp: 112";
-		rLen = 0;
-		rLoc = 2557;
-		rType = 0;
-		vrLen = 647;
-		vrLoc = 2213;
 	};
 	E45BE0390E8CC647009D7055 /* FreeImage.h */ = {
 		uiCtxt = {
@@ -1223,9 +1213,9 @@
 		};
 	};
 	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 53548F841114237800A4CAE3 /* Phagos */;
-		activeSDKPreference = macosx10.6;
+		activeSDKPreference = macosx10.5;
 		activeTarget = E4B69B5A0A3A1756003C02F2 /* Phagos */;
 		addToTargets = (
 			E4B69B5A0A3A1756003C02F2 /* Phagos */,
@@ -1293,14 +1283,21 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 286682159;
-			PBXWorkspaceStateSaveDate = 286682159;
+			PBXPerProjectTemplateStateSaveDate = 286683762;
+			PBXWorkspaceStateSaveDate = 286683762;
 		};
 		perUserProjectItems = {
 			53558BD91114F8560079191E = 53558BD91114F8560079191E /* PlistBookmark */;
 			53558C2711150BB20079191E = 53558C2711150BB20079191E /* PBXTextBookmark */;
 			53558C2811150BB20079191E = 53558C2811150BB20079191E /* PBXTextBookmark */;
-			53D83D6A11166C3900D228ED /* PBXTextBookmark */ = 53D83D6A11166C3900D228ED /* PBXTextBookmark */;
+			53D83D7411166E0A00D228ED = 53D83D7411166E0A00D228ED /* PBXTextBookmark */;
+			53D83DA0111670DA00D228ED = 53D83DA0111670DA00D228ED /* PBXTextBookmark */;
+			53D83DA1111670DA00D228ED = 53D83DA1111670DA00D228ED /* PBXTextBookmark */;
+			53D83DA2111670DA00D228ED = 53D83DA2111670DA00D228ED /* PBXTextBookmark */;
+			53D83DA3111670DA00D228ED = 53D83DA3111670DA00D228ED /* PBXTextBookmark */;
+			53D83DA4111670DA00D228ED = 53D83DA4111670DA00D228ED /* PBXTextBookmark */;
+			53D83DA5111670DA00D228ED = 53D83DA5111670DA00D228ED /* PBXTextBookmark */;
+			53D83DB61116718C00D228ED = 53D83DB61116718C00D228ED /* PBXTextBookmark */;
 			53F572FA11152BD300889420 = 53F572FA11152BD300889420 /* PBXTextBookmark */;
 			53F5732011152C2900889420 = 53F5732011152C2900889420 /* PBXTextBookmark */;
 			53F5732111152C2900889420 = 53F5732111152C2900889420 /* PBXTextBookmark */;
@@ -1346,8 +1343,6 @@
 			53F57AB41116491500889420 = 53F57AB41116491500889420 /* PBXTextBookmark */;
 			53F57AF311164D8D00889420 = 53F57AF311164D8D00889420 /* PBXTextBookmark */;
 			53F57AF411164D8D00889420 = 53F57AF411164D8D00889420 /* PBXTextBookmark */;
-			53F57B2C111656CB00889420 = 53F57B2C111656CB00889420 /* PBXTextBookmark */;
-			53F57B2E111656CB00889420 = 53F57B2E111656CB00889420 /* PBXTextBookmark */;
 			53F57B2F111656CB00889420 = 53F57B2F111656CB00889420 /* PBXTextBookmark */;
 			53F57B7811165DDF00889420 = 53F57B7811165DDF00889420 /* PBXTextBookmark */;
 			53F57B8C11165E9200889420 = 53F57B8C11165E9200889420 /* PBXTextBookmark */;
@@ -1357,13 +1352,7 @@
 			53F57BCC111663D900889420 = 53F57BCC111663D900889420 /* PBXTextBookmark */;
 			53F57BCD111663D900889420 = 53F57BCD111663D900889420 /* PBXTextBookmark */;
 			53F57BCE111663D900889420 = 53F57BCE111663D900889420 /* PBXTextBookmark */;
-			53F57BDD1116644800889420 = 53F57BDD1116644800889420 /* PBXTextBookmark */;
 			53F57BDE1116644800889420 = 53F57BDE1116644800889420 /* PBXTextBookmark */;
-			53F57BEA1116648500889420 = 53F57BEA1116648500889420 /* PBXTextBookmark */;
-			53F57BF6111665BD00889420 = 53F57BF6111665BD00889420 /* PBXTextBookmark */;
-			53F57C0D111668D700889420 = 53F57C0D111668D700889420 /* PBXTextBookmark */;
-			53F57C1711166AA400889420 = 53F57C1711166AA400889420 /* PBXTextBookmark */;
-			53F57C1811166AA400889420 = 53F57C1811166AA400889420 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 53548F881114239700A4CAE3 /* Source Control */;
 		userBuildSettings = {

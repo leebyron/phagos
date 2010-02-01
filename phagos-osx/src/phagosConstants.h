@@ -48,8 +48,13 @@
 // used in collisions to determine how much force to push back
 #define CREATURE_SQUISHINESS 0.08
 
+#define CREATURE_TAIL_LENGTH 0.1
+#define CREATURE_MOUTH_SIZE 0.1
+
+
 #define OOZE_USE_RATE 0.003
 #define OOZE_RECOVERY_RATE 0.001
+
 
 #define EDGE_FIELD_STRENGTH 0.0004
 

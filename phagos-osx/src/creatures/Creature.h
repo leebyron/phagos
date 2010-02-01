@@ -22,7 +22,7 @@ public:
   
   // Stats! the good stuff
   float   size;
-  float   mouthSize;
+  float   hunger;
   float   speed;
   
   // true if the creature is in the wild now

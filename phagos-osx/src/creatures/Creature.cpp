@@ -15,7 +15,7 @@ Creature::Creature() {
   verbose       = false;
 
   size          = 0;
-  mouthSize     = 0;
+  hunger        = 0;
   speed         = 0;
 
   released      = false;
@@ -112,12 +112,14 @@ void Creature::draw() {
   // draw mouth
   float mouthX = cos(angle) * physicalSize;
   float mouthY = sin(angle) * physicalSize;
-  ofCircle(mouthX, mouthY, physicalSize * 0.4);
+  float mouthSize = hunger * CREATURE_MOUTH_SIZE; // * physicalSize;
+  ofCircle(mouthX, mouthY, mouthSize);
 
   // draw tail
   float tailX = -mouthX;
   float tailY = -mouthY;
-  ofLine(tailX, tailY, tailX * physicalSize * 0.3, tailY * physicalSize * 0.3);
+  float tailLength = speed * CREATURE_TAIL_LENGTH; // * physicalSize;
+  ofLine(tailX, tailY, tailX * tailLength, tailY * tailLength);
 
   glPopMatrix();
 }

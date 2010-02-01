@@ -32,9 +32,10 @@ CreatureWorld::CreatureWorld() {
 
   edgesForceField = new EdgesForceField();
   physics->addUpdater(edgesForceField);
-  
+
   collisionForceField = new CollisionForceField();
   physics->addWorldUpdater(collisionForceField);
+
 }
 
 CreatureWorld::~CreatureWorld() {
@@ -56,13 +57,13 @@ void CreatureWorld::updateWorld() {
 
 Creature* CreatureWorld::spawnCreature(Player* player,
                                        float size,
-                                       float mouthSize,
+                                       float hunger,
                                        float speed) {
   Creature* spawned = new Creature();
 
   spawned->player       = player;
   spawned->size         = size;
-  spawned->mouthSize    = mouthSize;
+  spawned->hunger    = hunger;
   spawned->speed        = speed;
   
   spawned->setMass(1);

@@ -31,7 +31,7 @@ public:
   void updateWorld();
   Creature* spawnCreature(Player* player,
                           float size,
-                          float mouthSize,
+                          float hunger,
                           float speed);
 
 };
