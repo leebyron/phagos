@@ -10,7 +10,7 @@
 #include "Player.h"
 #include "ofMain.h"
 
-static float hues[4] = {105, 43, 192, 299};
+static float hues[8] = {43, 196, 297, 88, 26, 252, 158, 323};
 
 Player::Player(int playerNum, int joyNum) {
   this->playerNum     = playerNum;

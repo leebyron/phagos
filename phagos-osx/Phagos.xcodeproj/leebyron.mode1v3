@@ -284,14 +284,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>39</integer>
-									<integer>32</integer>
+									<integer>24</integer>
+									<integer>11</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 110}, {272, 723}}</string>
+							<string>{{0, 28}, {272, 723}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -328,7 +328,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>EdgesForceField.h</string>
+								<string>Player.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -336,11 +336,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>EdgesForceField.h</string>
+										<string>Player.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>53A14E4A1116C611004A5DA1</string>
+										<string>53A14E9D1116D1D6004A5DA1</string>
 										<key>history</key>
 										<array>
 											<string>53558BD91114F8560079191E</string>
@@ -358,8 +358,6 @@
 											<string>53F576981115888A00889420</string>
 											<string>53F579621115B82300889420</string>
 											<string>53F579641115B82300889420</string>
-											<string>53F5796A1115B88100889420</string>
-											<string>53F5796E1115B9E200889420</string>
 											<string>53F5796F1115B9E200889420</string>
 											<string>53F579A61115BFEF00889420</string>
 											<string>53F579B71116331F00889420</string>
@@ -383,24 +381,19 @@
 											<string>53F57BCE111663D900889420</string>
 											<string>53A14CD611169262004A5DA1</string>
 											<string>53A14CD711169262004A5DA1</string>
-											<string>53A14CD811169262004A5DA1</string>
 											<string>53A14CDA11169262004A5DA1</string>
 											<string>53A14CDC11169262004A5DA1</string>
 											<string>53A14CE011169262004A5DA1</string>
-											<string>53A14D3611169B5E004A5DA1</string>
 											<string>53A14DDA1116B999004A5DA1</string>
 											<string>53A14DDD1116B999004A5DA1</string>
 											<string>53A14DFC1116BBCA004A5DA1</string>
 											<string>53A14E101116BD4F004A5DA1</string>
-											<string>53A14E111116BD4F004A5DA1</string>
 											<string>53A14E191116BF25004A5DA1</string>
-											<string>53A14E1B1116BF25004A5DA1</string>
 											<string>53A14E291116C160004A5DA1</string>
 											<string>53A14E2B1116C160004A5DA1</string>
 											<string>53A14E2C1116C160004A5DA1</string>
 											<string>53A14E2D1116C160004A5DA1</string>
 											<string>53A14E2E1116C160004A5DA1</string>
-											<string>53A14E3D1116C3E8004A5DA1</string>
 											<string>53A14E421116C5BC004A5DA1</string>
 											<string>53A14E431116C5BC004A5DA1</string>
 											<string>53A14E441116C5BC004A5DA1</string>
@@ -408,7 +401,16 @@
 											<string>53A14E461116C5BC004A5DA1</string>
 											<string>53A14E471116C5BC004A5DA1</string>
 											<string>53A14E481116C5BC004A5DA1</string>
-											<string>53A14CDE11169262004A5DA1</string>
+											<string>53A14E4C1116C748004A5DA1</string>
+											<string>53A14E4D1116C748004A5DA1</string>
+											<string>53A14E6D1116CB2C004A5DA1</string>
+											<string>53A14E6E1116CB2C004A5DA1</string>
+											<string>53A14E6F1116CB2C004A5DA1</string>
+											<string>53A14E8C1116CDC2004A5DA1</string>
+											<string>53A14E931116CE0C004A5DA1</string>
+											<string>53A14E991116D0D2004A5DA1</string>
+											<string>53A14E9A1116D0D2004A5DA1</string>
+											<string>53A14E6C1116CB2C004A5DA1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -610,8 +612,8 @@
 		<string>53A14CE811169262004A5DA1</string>
 		<string>53A14CE911169262004A5DA1</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>53548FD0111424B300A4CAE3</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/Phagos.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -638,7 +640,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>IntroGameState.cpp</string>
+								<string>ofxSDLAppWindow.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

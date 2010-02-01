@@ -28,5 +28,4 @@ public:
   void windowResized(int w, int h);
 
   float counter;
-  bool	bSmooth;
 };

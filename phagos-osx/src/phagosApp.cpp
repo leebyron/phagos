@@ -20,7 +20,6 @@ void phagosApp::setup() {
 	counter = 0;
 	ofSetCircleResolution(50);
 	ofBackground(0,0,0);
-	bSmooth = false;
 	ofSetWindowTitle("Phagos");
 
   ofHideCursor();
@@ -49,18 +48,62 @@ void phagosApp::draw() {
 
 //--------------------------------------------------------------
 void phagosApp::keyPressed(int key) {
-	if (key == 's'){
-		bSmooth = !bSmooth;
-	}
+  // how many joysticks are there?
+  int availableControllers = SDL_NumJoysticks();
+  printf("pressed avail controllers %i\n", availableControllers);
+  
+  bool hitKey = false;
+  int device = 0;
+  if (key == SDLK_RSHIFT) {
+    hitKey = true;
+    device = availableControllers + 2;
+  } else if (key == SDLK_LSHIFT) {
+    hitKey = true;
+    device = availableControllers + 1;
+  } else if (key == SDLK_SPACE) {
+    hitKey = true;
+    device = availableControllers + 0;
+  }
+  
+  // simulate a joystick
+  if (hitKey) {
+    joyButtonPressed(device, 1);
+  }
 }
 
 //--------------------------------------------------------------
 void phagosApp::keyReleased(int key) {
+  // how many joysticks are there?
+  int availableControllers = SDL_NumJoysticks();
+  printf("released avail controllers %i\n", availableControllers);
+  
+  bool hitKey = false;
+  int device = 0;
+  if (key == SDLK_RSHIFT) {
+    hitKey = true;
+    device = availableControllers + 2;
+  } else if (key == SDLK_LSHIFT) {
+    hitKey = true;
+    device = availableControllers + 1;
+  } else if (key == SDLK_SPACE) {
+    hitKey = true;
+    device = availableControllers + 0;
+  }
+  
+  // simulate a joystick
+  if (hitKey) {
+    joyButtonReleased(device, 1);
+  }
 }
 
 
 //--------------------------------------------------------------
 void phagosApp::joyButtonPressed(int device, int button) {
+  if (device >= 8) {
+    return; // where did you these high numbered devices!?!
+  }
+  printf("pressed on device %i\n", device);
+  
   GameManager* gameManager     = GameManager::getManager();
   PlayerManager* playerManager = PlayerManager::getManager();
   
@@ -75,9 +118,9 @@ void phagosApp::joyButtonPressed(int device, int button) {
   if (!(playerManager->hasPlayerForJoystick(device))) {
     return;
   }
-  
+
   Player* player = playerManager->getPlayerForJoystick(device);
-  
+
   // only allow one button press at a time
   if (player->joyButtonPressed) {
     return;
@@ -89,6 +132,11 @@ void phagosApp::joyButtonPressed(int device, int button) {
 
 //--------------------------------------------------------------
 void phagosApp::joyButtonReleased(int device, int button) {
+  if (device >= 8) {
+    return; // where did you these high numbered devices?!?
+  }
+  printf("released on device %i\n", device);
+  
   GameManager* gameManager     = GameManager::getManager();
   PlayerManager* playerManager = PlayerManager::getManager();
   
