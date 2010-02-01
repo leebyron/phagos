@@ -2298,7 +2298,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 52";
 		rLen = 0;
-		rLoc = 1750;
+		rLoc = 1755;
 		rType = 0;
 		vrLen = 1324;
 		vrLoc = 731;
@@ -2308,7 +2308,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 52";
 		rLen = 0;
-		rLoc = 1750;
+		rLoc = 1755;
 		rType = 0;
 		vrLen = 1324;
 		vrLoc = 731;
@@ -2318,7 +2318,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 53";
 		rLen = 0;
-		rLoc = 1350;
+		rLoc = 1355;
 		rType = 0;
 		vrLen = 1298;
 		vrLoc = 916;
@@ -2453,7 +2453,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 52";
 		rLen = 0;
-		rLoc = 1236;
+		rLoc = 1241;
 		rType = 0;
 		vrLen = 604;
 		vrLoc = 967;
@@ -2543,7 +2543,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 116";
 		rLen = 0;
-		rLoc = 3263;
+		rLoc = 3268;
 		rType = 0;
 		vrLen = 1404;
 		vrLoc = 2221;
@@ -2553,7 +2553,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 52";
 		rLen = 0;
-		rLoc = 1350;
+		rLoc = 1355;
 		rType = 0;
 		vrLen = 1186;
 		vrLoc = 925;
@@ -2563,7 +2563,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 99";
 		rLen = 0;
-		rLoc = 2666;
+		rLoc = 2671;
 		rType = 0;
 		vrLen = 1289;
 		vrLoc = 1731;
@@ -2573,7 +2573,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 99";
 		rLen = 0;
-		rLoc = 2655;
+		rLoc = 2660;
 		rType = 0;
 		vrLen = 1350;
 		vrLoc = 2361;
@@ -2583,7 +2583,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 74";
 		rLen = 0;
-		rLoc = 1938;
+		rLoc = 1943;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 1097;
@@ -2593,7 +2593,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 94";
 		rLen = 0;
-		rLoc = 2409;
+		rLoc = 2414;
 		rType = 0;
 		vrLen = 1129;
 		vrLoc = 1357;
@@ -2603,7 +2603,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 53";
 		rLen = 0;
-		rLoc = 1302;
+		rLoc = 1307;
 		rType = 0;
 		vrLen = 1222;
 		vrLoc = 967;
@@ -2613,7 +2613,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 78";
 		rLen = 0;
-		rLoc = 1983;
+		rLoc = 1988;
 		rType = 0;
 		vrLen = 1247;
 		vrLoc = 1163;
@@ -2623,7 +2623,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 78";
 		rLen = 0;
-		rLoc = 1983;
+		rLoc = 1988;
 		rType = 0;
 		vrLen = 1247;
 		vrLoc = 1163;
@@ -2763,7 +2763,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
 		name = "phagosApp.cpp: 52";
 		rLen = 0;
-		rLoc = 1236;
+		rLoc = 1241;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 1057;
@@ -2836,6 +2836,115 @@
 		rType = 0;
 		vrLen = 1110;
 		vrLoc = 3;
+	};
+	53A14ECE1116D6AE004A5DA1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 53558BEB1114FDC70079191E /* Player.cpp */;
+		name = "Player.cpp: 39";
+		rLen = 0;
+		rLoc = 932;
+		rType = 0;
+		vrLen = 1110;
+		vrLoc = 3;
+	};
+	53A14ECF1116D6AE004A5DA1 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/openFrameworks-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	53A14ED01116D6AE004A5DA1 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/openFrameworks-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	53A14F231116D701004A5DA1 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIconFile,
+		);
+		name = "/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/openFrameworks-Info.plist";
+		rLen = 16;
+		rLoc = 0;
+	};
+	53A14F241116D701004A5DA1 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIconFile,
+		);
+		name = "/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/openFrameworks-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	53A14F261116D7C3004A5DA1 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/openFrameworks-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	53A14F271116D7C3004A5DA1 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/openFrameworks-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	53A14F2F1116D841004A5DA1 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/openFrameworks-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	53A14F301116D841004A5DA1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
+		name = "phagosApp.cpp: 28";
+		rLen = 0;
+		rLoc = 603;
+		rType = 0;
+		vrLen = 617;
+		vrLoc = 445;
+	};
+	53A14F361116D858004A5DA1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */;
+		name = "phagosApp.cpp: 28";
+		rLen = 0;
+		rLoc = 603;
+		rType = 0;
+		vrLen = 656;
+		vrLoc = 445;
 	};
 	53D83D7411166E0A00D228ED /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -3731,7 +3840,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					627,
+					580,
 					20,
 					48,
 					43,
@@ -3753,7 +3862,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					563,
+					540,
 					60,
 					20,
 					48,
@@ -4026,6 +4135,16 @@
 			53A14EAD1116D467004A5DA1 /* PBXTextBookmark */ = 53A14EAD1116D467004A5DA1 /* PBXTextBookmark */;
 			53A14EAE1116D467004A5DA1 /* PBXTextBookmark */ = 53A14EAE1116D467004A5DA1 /* PBXTextBookmark */;
 			53A14EAF1116D469004A5DA1 /* PBXTextBookmark */ = 53A14EAF1116D469004A5DA1 /* PBXTextBookmark */;
+			53A14ECE1116D6AE004A5DA1 /* PBXTextBookmark */ = 53A14ECE1116D6AE004A5DA1 /* PBXTextBookmark */;
+			53A14ECF1116D6AE004A5DA1 /* PlistBookmark */ = 53A14ECF1116D6AE004A5DA1 /* PlistBookmark */;
+			53A14ED01116D6AE004A5DA1 /* PlistBookmark */ = 53A14ED01116D6AE004A5DA1 /* PlistBookmark */;
+			53A14F231116D701004A5DA1 /* PlistBookmark */ = 53A14F231116D701004A5DA1 /* PlistBookmark */;
+			53A14F241116D701004A5DA1 /* PlistBookmark */ = 53A14F241116D701004A5DA1 /* PlistBookmark */;
+			53A14F261116D7C3004A5DA1 /* PlistBookmark */ = 53A14F261116D7C3004A5DA1 /* PlistBookmark */;
+			53A14F271116D7C3004A5DA1 /* PlistBookmark */ = 53A14F271116D7C3004A5DA1 /* PlistBookmark */;
+			53A14F2F1116D841004A5DA1 /* PlistBookmark */ = 53A14F2F1116D841004A5DA1 /* PlistBookmark */;
+			53A14F301116D841004A5DA1 /* PBXTextBookmark */ = 53A14F301116D841004A5DA1 /* PBXTextBookmark */;
+			53A14F361116D858004A5DA1 /* PBXTextBookmark */ = 53A14F361116D858004A5DA1 /* PBXTextBookmark */;
 			53D83D7411166E0A00D228ED = 53D83D7411166E0A00D228ED /* PBXTextBookmark */;
 			53D83DA0111670DA00D228ED = 53D83DA0111670DA00D228ED /* PBXTextBookmark */;
 			53D83DA1111670DA00D228ED = 53D83DA1111670DA00D228ED /* PBXTextBookmark */;
@@ -4109,9 +4228,9 @@
 	};
 	E4B69E1E0A3A1BDC003C02F2 /* phagosApp.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 2505}}";
-			sepNavSelRange = "{1236, 0}";
-			sepNavVisRange = "{1057, 609}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 2535}}";
+			sepNavSelRange = "{603, 0}";
+			sepNavVisRange = "{445, 656}";
 		};
 	};
 	E4B69E1F0A3A1BDC003C02F2 /* phagosApp.h */ = {

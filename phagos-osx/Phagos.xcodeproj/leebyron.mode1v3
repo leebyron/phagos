@@ -265,33 +265,21 @@
 							<array>
 								<string>E4B69B4A0A3A1720003C02F2</string>
 								<string>E4B69E1C0A3A1BDC003C02F2</string>
-								<string>53558C2011150BA20079191E</string>
-								<string>53F571CA111517FD00889420</string>
-								<string>53558BE31114F8B60079191E</string>
-								<string>5354940A1114D02500A4CAE3</string>
-								<string>53548F981114241300A4CAE3</string>
-								<string>53558B961114F5180079191E</string>
-								<string>53558B981114F52C0079191E</string>
-								<string>53558B991114F52C0079191E</string>
-								<string>53558B9D1114F52C0079191E</string>
-								<string>53558BA31114F52C0079191E</string>
-								<string>53548F9A1114245A00A4CAE3</string>
-								<string>53548F9D1114245A00A4CAE3</string>
-								<string>E45BE5980E8CC70C009D7055</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>53A14F2D1116D841004A5DA1</string>
+								<string>53A14F2E1116D841004A5DA1</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>24</integer>
 									<integer>11</integer>
-									<integer>3</integer>
+									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 28}, {272, 723}}</string>
+							<string>{{0, 0}, {272, 614}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -303,14 +291,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {289, 741}}</string>
+						<string>{{0, 0}, {289, 632}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>272</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>243 76 1160 782 0 0 1440 878 </string>
+						<string>161 42 1113 673 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -328,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Player.cpp</string>
+								<string>phagosApp.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -336,14 +324,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Player.cpp</string>
+										<string>phagosApp.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>53A14EAF1116D469004A5DA1</string>
+										<string>53A14F361116D858004A5DA1</string>
 										<key>history</key>
 										<array>
-											<string>53558BD91114F8560079191E</string>
 											<string>53558C2711150BB20079191E</string>
 											<string>53558C2811150BB20079191E</string>
 											<string>53F5732011152C2900889420</string>
@@ -406,11 +393,12 @@
 											<string>53A14E6D1116CB2C004A5DA1</string>
 											<string>53A14E6E1116CB2C004A5DA1</string>
 											<string>53A14E6F1116CB2C004A5DA1</string>
-											<string>53A14E8C1116CDC2004A5DA1</string>
 											<string>53A14E931116CE0C004A5DA1</string>
 											<string>53A14E991116D0D2004A5DA1</string>
 											<string>53A14E9A1116D0D2004A5DA1</string>
-											<string>53A14E6C1116CB2C004A5DA1</string>
+											<string>53A14ECE1116D6AE004A5DA1</string>
+											<string>53A14F2F1116D841004A5DA1</string>
+											<string>53A14E8C1116CDC2004A5DA1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -422,14 +410,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {866, 736}}</string>
+								<string>{{0, 0}, {819, 439}}</string>
 								<key>RubberWindowFrame</key>
-								<string>243 76 1160 782 0 0 1440 878 </string>
+								<string>161 42 1113 673 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>736pt</string>
+							<string>439pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -442,18 +430,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 741}, {866, 0}}</string>
+								<string>{{0, 444}, {819, 188}}</string>
 								<key>RubberWindowFrame</key>
-								<string>243 76 1160 782 0 0 1440 878 </string>
+								<string>161 42 1113 673 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>0pt</string>
+							<string>188pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>866pt</string>
+					<string>819pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -617,7 +605,7 @@
 		<string>/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/Phagos.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>243 76 1160 782 0 0 1440 878 </string>
+	<string>161 42 1113 673 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
