@@ -1,0 +1,38 @@
+=== PHAGOS ===
+Greek: φάγος
+n. a voracious being, a glutton
+
+--------------
+
+Created by Lee Byron and Ash Huang
+
+Experimental Design Lab
+
+--------------
+
+Requirements:
+
+OSX 10.5 or higher
+
+Keyboard:
+Use Space, Left Shift and Right Shift to play up to 3 players
+
+Joysticks:
+Supports most joysticks, Use any button on joystick
+Drivers for XBOX 360 controllers for OSX included
+
+--------------
+
+To Play:
+
+Create creatures with different characteristics by pressing and holding your button.
+The length of the first press determines the size of the body
+The second press determines the size of the mouth
+The third press determines the size of the locomotion
+
+After three presses, your creature will enter the wild to fend for itself.
+It must feast on creatures of other species in order to survive, but beware,
+for others will try to feast on you.
+
+If all your strain of creatures becomes extinct, you will fall out of the game.
+Can you create the most resilient and ruthless creatures?
