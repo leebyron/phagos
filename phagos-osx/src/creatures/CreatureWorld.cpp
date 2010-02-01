@@ -44,15 +44,32 @@ CreatureWorld::~CreatureWorld() {
 
 void CreatureWorld::resetWorld() {
   // remove all critters
-  for (int i = 0; i < creatures.size(); i++) {
+/*  for (int i = 0; i < creatures.size(); i++) {
     creatures[i]->release();
+  }*/
+  list<Creature*>::iterator it;
+  Creature* creature;
+  for (it=creatures.begin(); it!=creatures.end(); ++it) {
+    creature = *it;
+    creature->release();
   }
-  creatures.erase(creatures.begin(), creatures.end());
+  creatures.clear();//erase(creatures.begin(), creatures.end());
   physics->clear();
 }
 
 void CreatureWorld::updateWorld() {
   physics->update(1);
+
+  // remove creatures that are long since dead!
+  list<Creature*>::iterator it;
+  Creature* creature;
+  for (it=creatures.begin(); it!=creatures.end(); ++it) {
+    creature = *it;
+    if (creature->isDead()) {
+      creature->release();
+      creatures.erase(it);
+    }
+  }
 }
 
 Creature* CreatureWorld::spawnCreature(Player* player,

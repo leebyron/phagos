@@ -76,7 +76,12 @@ void CreatureCreator::update() {
 }
 
 void CreatureCreator::pressed() {
+  if (remainingOoze < 0.1) {
+    return;
+  }
+
   if (!creature || creature->stepsCompleted == 3) {
+    remainingOoze -= NEW_CREATURE_COST;
     creature = CreatureWorld::getWorld()->spawnCreature(player, 0, 0, 0);
   }
 
@@ -86,7 +91,7 @@ void CreatureCreator::pressed() {
 }
 
 void CreatureCreator::released() {
-  if (!creature) return;
+  if (!creature || !isPressed) return;
   
   creature->stepsCompleted++;
   isPressed = false;
@@ -158,10 +163,15 @@ void CreatureCreator::draw() {
   glTranslatef(player->origin.x, player->origin.y, 0);
   
   float ringOpacity = opacity * (0.33 + 0.5 * luminocity);
-  glColor4f(player->color.r,
-            player->color.g,
-            player->color.b,
-            ringOpacity);
+  
+  if (remainingOoze < 0.1) {
+    glColor4f(1, 0, 0, ringOpacity);
+  } else {
+    glColor4f(player->color.r,
+              player->color.g,
+              player->color.b,
+              ringOpacity);
+  }
 
   ofxMSAShape3D ring;
   ring.begin(GL_TRIANGLE_STRIP);

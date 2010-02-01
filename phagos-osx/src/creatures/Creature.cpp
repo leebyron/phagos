@@ -21,9 +21,12 @@ Creature::Creature() {
 
   // start as a static element
   released      = false;
+  wasKilled     = false;
+  isEating      = false;
   makeFixed();
 
   angle         = -HALF_PI;
+  angleV        = 0;
   velocity      = 0;
 }
 
@@ -32,21 +35,35 @@ Creature::~Creature() {
 }
 
 void Creature::update() {
+  
+  if (isDead()) {
+    return;
+  }
+  
+  // if we're dead, destroy!
+  if (wasKilled || size <= 0) {
+    released = false;
+    kill();
+    return;
+  }
+
   CreatureWorld* world = CreatureWorld::getWorld();
   
   // called every frame by the physics engine
-  setRadius(sqrt(size) * CREATURE_SIZE_SCALAR + CREATURE_SIZE_MIN);
-  setMass(size * CREATURE_WEIGHT_SCALAR + CREATURE_WEIGHT_MIN);
+  setRadius(MAX(0, sqrt(size) * CREATURE_SIZE_SCALAR + CREATURE_SIZE_MIN));
+  setMass(MAX(0, size * CREATURE_WEIGHT_SCALAR + CREATURE_WEIGHT_MIN));
   
   if (!released) {
     
     // do nothing yet
+    // TODO: lifelike wiggles
     return;
     
   } else {
-
-    // movement?
-    float angleDiff;
+    
+    // angle and speed is limited by creature ability
+    float maxTurn = CREATURE_TURNING_MIN + (CREATURE_TURNING_SCALAR * speed);
+    float maxVelocity = CREATURE_VELOCITY_MIN + (CREATURE_VELOCITY_SCALAR * speed);    
     
     // find closest critter on opposing team
     float closestDistance2 = 0;
@@ -54,8 +71,10 @@ void Creature::update() {
     Creature* creature;
     Creature* closestCreature = NULL;
     ofPoint distanceToCreature;
-    for (int i = 0; i < world->creatures.size(); i++) {
-      creature = world->creatures[i];
+
+    list<Creature*>::iterator it;
+    for (it = world->creatures.begin(); it != world->creatures.end(); ++it) {
+      creature = *it;
       if (creature->player == player || !(creature->released)) {
         continue;
       }
@@ -68,29 +87,58 @@ void Creature::update() {
       }
     }
     
+    // chase the closest creature!
     if (closestCreature == NULL) {
-      angleDiff = ofRandomf() * 0.2;
+      angleV += 0.3 * ofRandomf() * maxTurn;
     } else {
       distanceToCreature = *closestCreature - *this;
       float targetAngle = atan2(distanceToCreature.y, distanceToCreature.x);
-      angleDiff = targetAngle - angle;
-      WRAP_ANGLE(angleDiff);
+      angleV = targetAngle - angle;
+      WRAP_ANGLE(angleV);
+    }
+
+    // if the closest creature is at our mouth, nom some points
+    isEating = false;
+    if (closestCreature) {
+      float minDist = getRadius() + closestCreature->getRadius();
+      //printf("eat if %f - %f < 100\n", sqrtf(closestDistance2), minDist, 100);
+      if (sqrtf(closestDistance2) - minDist < NOM_DISTANCE) {
+        // part of being able to eat is having your mouth in the right place
+        // the most epic eater can nom with 30deg CREATURE_EATING_ANGLE in either direction
+        // but minimum of 5 deg in either angle CREATURE_EATING_ANGLE_MIN on a easing basis
+        float maxAngle = hunger * CREATURE_EATING_ANGLE + CREATURE_EATING_ANGLE_MIN;
+        float eatAngleLinear = (maxAngle - ABS(angleV)) / maxAngle;
+
+        if (eatAngleLinear > 0) {
+          float eatingSpeed = hunger * CREATURE_EATING_SPEED + CREATURE_EATING_MIN;
+          float eatAngle = sqrtf(eatAngleLinear);
+          eatingSpeed *= eatAngle;
+
+          if (eatingSpeed > closestCreature->size) {
+            closestCreature->wasKilled = true;
+            eatingSpeed = closestCreature->size;
+          }
+          closestCreature->size -= eatingSpeed;
+          size += eatingSpeed * POINTS_EATEN_EFFICIENCY;
+          isEating = true;
+        }
+      }
     }
     
-    float maxTurn = CREATURE_TURNING_MIN + (CREATURE_TURNING_SCALAR * speed);
-    float maxVelocity = CREATURE_VELOCITY_MIN + (CREATURE_VELOCITY_SCALAR * speed);
-    
-    if (angleDiff > maxTurn) {
-      angleDiff = maxTurn;
-    } else if (angleDiff < -maxTurn) {
-      angleDiff = -maxTurn;
+    // use some metabolism!
+    size -= PER_FRAME_METABOLISM;
+
+    if (angleV > maxTurn) {
+      angleV = maxTurn;
+    } else if (angleV < -maxTurn) {
+      angleV = -maxTurn;
     }
 
     // determine speed
     velocity = ofRandomuf() * maxVelocity;
 
     // add velocity from swimming
-    angle += angleDiff;
+    angle += angleV;
     ofPoint swimVelo;
     swimVelo.x = cos(angle) * velocity;
     swimVelo.y = sin(angle) * velocity;  
@@ -131,6 +179,11 @@ void Creature::draw() {
   float tailY = -mouthY;
   float tailLength = speed * CREATURE_TAIL_LENGTH; // * physicalSize;
   ofLine(tailX, tailY, tailX * tailLength, tailY * tailLength);
+  
+  if (isEating) {
+    glColor4f(1,0,0,1);
+    ofCircle(0, 0, physicalSize * 0.5);
+  }
 
   glPopMatrix();
 }

@@ -22,12 +22,24 @@ void CollisionForceField::update() {
   }
   
   // O(n^2) loop goes here, do some smart ass shit.
+  
+  list<Creature*>::iterator it;
+  list<Creature*>::iterator jt;
+  for (it = world->creatures.begin(); it != world->creatures.end(); ++it) {
+    _a = *it;
+    rA = _a->getRadius();
+    for (jt = it; jt != world->creatures.end(); ++jt) {
+      _b = *jt;
+      if (_a == _b) continue;
+
+/*  
+  
   n = world->creatures.size();
   for (int i = 0; i < n; i++) {
     _a = world->creatures[i];
     rA = _a->getRadius();
     for (int j = i + 1; j < n; j++) {
-      _b = world->creatures[j];
+      _b = world->creatures[j];*/
       rB = _b->getRadius();
       restLength = rA + rB;
       delta = (*_b) - (*_a);

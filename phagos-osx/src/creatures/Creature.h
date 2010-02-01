@@ -28,8 +28,12 @@ public:
   
   // true if the creature is in the wild now
   bool    released;
+  bool    wasKilled;
+  
+  bool    isEating;
 
   // critter's motion
+  float   angleV;
   float   angle;
   float   velocity;
 

@@ -22,7 +22,7 @@ public:
   ~CreatureWorld();
 
   ofxMSAPhysics*  physics;
-  vector<Creature*> creatures;
+  list<Creature*> creatures;
   
   EdgesForceField* edgesForceField;
   CollisionForceField* collisionForceField;

@@ -57,13 +57,19 @@ void PlayingGameState::draw() {
   glPopMatrix();
   
   CreatureWorld* world = CreatureWorld::getWorld();
-  Creature* creature;
   
   // draw all of the creatures on the screen please
+  list<Creature*>::iterator it;
+  Creature* creature;
+  for (it=world->creatures.begin(); it!=world->creatures.end(); ++it) {
+    creature = *it;
+    creature->draw();
+  }
+/*  
   for (int i = 0; i < world->creatures.size(); i++) {
     world->creatures[i]->draw();
   }
-
+*/
   // draw all players' creators
   for (int i = 0; i < playerManager->numPlayers; i++) {
     playerManager->getPlayer(i)->creatureCreator->draw();
