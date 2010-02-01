@@ -39,15 +39,7 @@ void PlayingGameState::update() {
   Player* player;
   for (int i = 0; i < playerManager->numPlayers; i++) {
     player = playerManager->getPlayer(i);
-    if (player->creatureCreator->targetLuminocity > 0 &&
-        player->creatureCreator->remainingOoze > 0) {
-      player->creatureCreator->remainingOoze =
-        CLAMP(player->creatureCreator->remainingOoze - OOZE_USE_RATE, 0, 1);
-    } else if (player->creatureCreator->remainingOoze < 1) {
-      player->creatureCreator->remainingOoze =
-        CLAMP(player->creatureCreator->remainingOoze + OOZE_RECOVERY_RATE, 0, 1);
-    }
-    playerManager->getPlayer(i)->creatureCreator->update();
+        playerManager->getPlayer(i)->creatureCreator->update();
   }
 
   CreatureWorld::getWorld()->updateWorld();
@@ -84,13 +76,10 @@ void PlayingGameState::exit() {
 
 void PlayingGameState::pressed(Player* player) {
   player->creatureCreator->targetLuminocity = 1.0;
+  player->creatureCreator->pressed();
 }
 
 void PlayingGameState::released(Player* player) {
   player->creatureCreator->targetLuminocity = 0.0;
-
-  Creature* creature = CreatureWorld::getWorld()->spawnCreature(player,
-                                                                ofRandom(1, 100),
-                                                                ofRandom(1, 100),
-                                                                ofRandom(1, 100));
+  player->creatureCreator->released();
 }

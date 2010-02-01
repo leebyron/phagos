@@ -10,15 +10,19 @@
 #include "CreatureCreator.h"
 #include "phagosConstants.h"
 #include "Player.h"
+#include "Creature.h"
 #include "PlayerManager.h"
 #include "ofxMSAShape3D.h"
 #include "Image.h"
+#include "CreatureWorld.h"
 
 static GLuint outerRingImg;
 static GLuint outerRingGlow;
 
 CreatureCreator::CreatureCreator(Player* player) {
   this->player = player;
+
+  creature = NULL;
 
   remainingOoze = 1.0;
   luminocity    = 0.0;
@@ -45,6 +49,51 @@ void CreatureCreator::update() {
   targetX = lastPlayer == 0 ? 0.5 : ((float)player->playerNum / lastPlayer);
   targetX = round(RING_RADIUS * 1.5 + targetX * (ofGetWidth() - RING_RADIUS * 3));
   player->origin.x += CONTROLLER_ANIMATOR * (targetX - player->origin.x);
+  
+  // create monster!
+  if (isPressed && creature) {
+    numFramesSincePress++;
+    float elapsed = ofGetElapsedTimef() - timePressed;
+    
+    float usedOoze = MIN(player->creatureCreator->remainingOoze, OOZE_USE_RATE);
+    remainingOoze -= usedOoze;
+    
+    switch (creature->stepsCompleted) {
+      case 0:
+        creature->size += usedOoze * POINTS_TO_OOZE;
+        break;
+      case 1:
+        creature->hunger += usedOoze * POINTS_TO_OOZE;
+        break;
+      case 2:
+        creature->speed += usedOoze * POINTS_TO_OOZE;
+        break;
+    }
+  } else if (player->creatureCreator->remainingOoze < 1) {
+    player->creatureCreator->remainingOoze =
+    CLAMP(player->creatureCreator->remainingOoze + OOZE_RECOVERY_RATE, 0, 1);
+  }
+}
+
+void CreatureCreator::pressed() {
+  if (!creature || creature->stepsCompleted == 3) {
+    creature = CreatureWorld::getWorld()->spawnCreature(player, 0, 0, 0);
+  }
+
+  timePressed = ofGetElapsedTimef();
+  numFramesSincePress = 0;
+  isPressed = true;
+}
+
+void CreatureCreator::released() {
+  if (!creature) return;
+  
+  creature->stepsCompleted++;
+  isPressed = false;
+  
+  if (creature->stepsCompleted == 3) {
+    creature->unleash();
+  }
 }
 
 void CreatureCreator::draw() {
@@ -54,7 +103,7 @@ void CreatureCreator::draw() {
   glPushMatrix();
   glTranslatef(player->origin.x, player->origin.y, 0);
   
-  // draws it here!
+  // draws ring edges
   glColor4f(1, 1, 1, 1);
   glPushMatrix();
   glTranslatef(-128, -128, 0);
@@ -62,7 +111,7 @@ void CreatureCreator::draw() {
   drawTexture(outerRingImg);
   glPopMatrix();
   
-  // draws it here!
+  // draws ring glow
   glColor4f(1, 1, 1, luminocity);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE);
   glPushMatrix();
@@ -71,8 +120,43 @@ void CreatureCreator::draw() {
   drawTexture(outerRingGlow);
   glPopMatrix();
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  glDisable(GL_BLEND);
+  
+  glPopMatrix(); // end translate
 
+  // draw creature if we have one
+  if (creature != NULL &&
+      (numFramesSincePress > 0 || creature->stepsCompleted > 0)) {
+    
+    glEnable(GL_STENCIL_TEST);
+    
+    // set stencil but don't actually draw
+    glStencilFunc(GL_NEVER, 0x1, 0x1);
+    glStencilOp (GL_REPLACE, GL_REPLACE, GL_REPLACE);
+    ofCircle(player->origin.x, player->origin.y, RING_RADIUS * 0.93);
+    
+    // allow drawing where we drew into the stencil
+    glStencilFunc(GL_EQUAL, 1, 1);
+    glStencilOp(GL_KEEP, GL_KEEP, GL_KEEP);
+    
+    glPushMatrix();
+    glTranslatef(-creature->x * CREATOR_MAGNIFICATION, -creature->y * CREATOR_MAGNIFICATION, 0);
+    glScalef(1 + CREATOR_MAGNIFICATION, 1 + CREATOR_MAGNIFICATION, 1);
+    
+    creature->draw();
+    glPopMatrix();
+    
+    // turn off stenciling
+    glClear(GL_STENCIL_BUFFER_BIT);
+    glDisable(GL_STENCIL_TEST);
+  }
+  
   // draw ring
+  glEnable(GL_BLEND);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  glPushMatrix();
+  glTranslatef(player->origin.x, player->origin.y, 0);
+  
   float ringOpacity = opacity * (0.33 + 0.5 * luminocity);
   glColor4f(player->color.r,
             player->color.g,

@@ -11,6 +11,7 @@
 #include "ofxObjCPointer.h"
 
 class Player;
+class Creature;
 
 class CreatureCreator : public ofxObjCPointer {
 public:
@@ -18,9 +19,17 @@ public:
   CreatureCreator(Player* player);
   ~CreatureCreator();
   
+  // game stats
   Player* player;
   float remainingOoze;
+  Creature* creature;
+  
+  // assembly stats
+  float timePressed;
+  int numFramesSincePress;
+  bool isPressed;
 
+  // drawing stats
   float luminocity;
   float radius;
   float opacity;
@@ -31,5 +40,8 @@ public:
 
   void update();
   void draw();
+  
+  void pressed();
+  void released();
 
 };

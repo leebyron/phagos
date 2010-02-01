@@ -51,7 +51,7 @@ public:
     }
     
     // nudge towards center
-    force += 0.1;
+    force += 0.25;
 
     // un-transform oval
     deltaDistance.y *= 0.5;

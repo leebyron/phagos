@@ -19,7 +19,7 @@
 #define MAX_PLAYERS 4
 
 
-#define INITIAL_GAME_STATE 0x4 // 0x1
+#define INITIAL_GAME_STATE 0x2 // 0x1
 
 
 // determines how rapid animations of the controller are
@@ -39,7 +39,7 @@
 
 // determines how big a creature can get
 #define CREATURE_SIZE_SCALAR 2.5
-#define CREATURE_SIZE_MIN 2
+#define CREATURE_SIZE_MIN 0
 
 // determines the mass of a creature which effects how things move
 #define CREATURE_WEIGHT_SCALAR 0.1
@@ -56,7 +56,16 @@
 #define OOZE_RECOVERY_RATE 0.001
 
 
+// the mag power of your creator
+#define CREATOR_MAGNIFICATION 0.4
+
+
 #define EDGE_FIELD_STRENGTH 0.0004
+
+
+// how many points are added to a creature per frame * OOZE_USE_RATE while button is pressed
+// OOZE_USE_RATE(0.003) * FPS(60) * POINTS_TO_OOZE(500) = POINTS_PER_SECOND(54)
+#define POINTS_TO_OOZE 500
 
 
 #ifndef WRAP_ANGLE

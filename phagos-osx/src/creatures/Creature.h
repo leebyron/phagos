@@ -24,6 +24,7 @@ public:
   float   size;
   float   hunger;
   float   speed;
+  int stepsCompleted;
   
   // true if the creature is in the wild now
   bool    released;
@@ -34,5 +35,7 @@ public:
 
   void update();
   void draw();
+  
+  void unleash();
 
 };

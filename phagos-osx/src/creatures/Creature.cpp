@@ -17,8 +17,11 @@ Creature::Creature() {
   size          = 0;
   hunger        = 0;
   speed         = 0;
+  stepsCompleted = 0;
 
+  // start as a static element
   released      = false;
+  makeFixed();
 
   angle         = -HALF_PI;
   velocity      = 0;
@@ -30,61 +33,69 @@ Creature::~Creature() {
 
 void Creature::update() {
   CreatureWorld* world = CreatureWorld::getWorld();
-
+  
   // called every frame by the physics engine
   setRadius(sqrt(size) * CREATURE_SIZE_SCALAR + CREATURE_SIZE_MIN);
   setMass(size * CREATURE_WEIGHT_SCALAR + CREATURE_WEIGHT_MIN);
-
-  // movement?
-  float angleDiff;
   
-  // find closest critter on opposing team
-  float closestDistance2 = 0;
-  float d2 = 0;
-  Creature* creature;
-  Creature* closestCreature = NULL;
-  ofPoint distanceToCreature;
-  for (int i = 0; i < world->creatures.size(); i++) {
-    creature = world->creatures[i];
-    if (creature->player == player) {
-      continue;
-    }
-
-    distanceToCreature = *creature - *this;
-    d2 = msaLengthSquared(distanceToCreature);
-    if (closestCreature == NULL || d2 < closestDistance2) {
-      closestCreature = creature;
-      closestDistance2 = d2;
-    }
-  }
-  
-  if (closestCreature == NULL) {
-    angleDiff = ofRandomuf();
+  if (!released) {
+    
+    // do nothing yet
+    return;
+    
   } else {
-    distanceToCreature = *closestCreature - *this;
-    float targetAngle = atan2(distanceToCreature.y, distanceToCreature.x);
-    angleDiff = targetAngle - angle;
-    WRAP_ANGLE(angleDiff);
-  }
-  
-  float maxTurn = CREATURE_TURNING_MIN + (CREATURE_TURNING_SCALAR * speed);
-  float maxVelocity = CREATURE_VELOCITY_MIN + (CREATURE_VELOCITY_SCALAR * speed);
-  
-  if (angleDiff > maxTurn) {
-    angleDiff = maxTurn;
-  } else if (angleDiff < -maxTurn) {
-    angleDiff = -maxTurn;
-  }
 
-  // determine speed
-  velocity = ofRandomuf() * maxVelocity;
+    // movement?
+    float angleDiff;
+    
+    // find closest critter on opposing team
+    float closestDistance2 = 0;
+    float d2 = 0;
+    Creature* creature;
+    Creature* closestCreature = NULL;
+    ofPoint distanceToCreature;
+    for (int i = 0; i < world->creatures.size(); i++) {
+      creature = world->creatures[i];
+      if (creature->player == player || !(creature->released)) {
+        continue;
+      }
 
-  // add velocity from swimming
-  angle += angleDiff;
-  ofPoint swimVelo;
-  swimVelo.x = cos(angle) * velocity;
-  swimVelo.y = sin(angle) * velocity;  
-  addVelocity(swimVelo);
+      distanceToCreature = *creature - *this;
+      d2 = msaLengthSquared(distanceToCreature);
+      if (closestCreature == NULL || d2 < closestDistance2) {
+        closestCreature = creature;
+        closestDistance2 = d2;
+      }
+    }
+    
+    if (closestCreature == NULL) {
+      angleDiff = ofRandomf() * 0.2;
+    } else {
+      distanceToCreature = *closestCreature - *this;
+      float targetAngle = atan2(distanceToCreature.y, distanceToCreature.x);
+      angleDiff = targetAngle - angle;
+      WRAP_ANGLE(angleDiff);
+    }
+    
+    float maxTurn = CREATURE_TURNING_MIN + (CREATURE_TURNING_SCALAR * speed);
+    float maxVelocity = CREATURE_VELOCITY_MIN + (CREATURE_VELOCITY_SCALAR * speed);
+    
+    if (angleDiff > maxTurn) {
+      angleDiff = maxTurn;
+    } else if (angleDiff < -maxTurn) {
+      angleDiff = -maxTurn;
+    }
+
+    // determine speed
+    velocity = ofRandomuf() * maxVelocity;
+
+    // add velocity from swimming
+    angle += angleDiff;
+    ofPoint swimVelo;
+    swimVelo.x = cos(angle) * velocity;
+    swimVelo.y = sin(angle) * velocity;  
+    addVelocity(swimVelo);
+  }
 }
 
 // called manually by our code to draw
@@ -122,4 +133,9 @@ void Creature::draw() {
   ofLine(tailX, tailY, tailX * tailLength, tailY * tailLength);
 
   glPopMatrix();
+}
+
+void Creature::unleash() {
+  released = true;
+  makeFree();
 }
