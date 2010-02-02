@@ -265,15 +265,27 @@
 							<array>
 								<string>E4B69B4A0A3A1720003C02F2</string>
 								<string>E4B69E1C0A3A1BDC003C02F2</string>
+								<string>53558C2011150BA20079191E</string>
+								<string>53F571CA111517FD00889420</string>
+								<string>53558BE31114F8B60079191E</string>
+								<string>5354940A1114D02500A4CAE3</string>
+								<string>53548F981114241300A4CAE3</string>
+								<string>53F5745F1115615900889420</string>
+								<string>53558B961114F5180079191E</string>
+								<string>53558B981114F52C0079191E</string>
+								<string>53558BA31114F52C0079191E</string>
+								<string>53548F9A1114245A00A4CAE3</string>
+								<string>E45BE0480E8CC657009D7055</string>
+								<string>E45BE5980E8CC70C009D7055</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>53A14F2D1116D841004A5DA1</string>
 								<string>53A14F2E1116D841004A5DA1</string>
-								<string>1C37FABC05509CD000000102</string>
+								<string>1C37FAAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
+									<integer>10</integer>
 									<integer>4</integer>
 									<integer>0</integer>
 								</array>
@@ -298,7 +310,7 @@
 							<real>272</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>161 42 1113 673 0 0 1440 878 </string>
+						<string>240 106 1113 673 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -316,7 +328,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>phagosApp.cpp</string>
+								<string>phagosConstants.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +336,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>phagosApp.cpp</string>
+										<string>phagosConstants.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>53A14F361116D858004A5DA1</string>
+										<string>53A152A511184095004A5DA1</string>
 										<key>history</key>
 										<array>
 											<string>53558C2711150BB20079191E</string>
@@ -339,43 +351,25 @@
 											<string>53F573AA11154A9F00889420</string>
 											<string>53F573CD11154E0700889420</string>
 											<string>53F573CE11154E0700889420</string>
-											<string>53F574A611156B8D00889420</string>
 											<string>53F57535111573DF00889420</string>
 											<string>53F5763A11157F5300889420</string>
 											<string>53F576981115888A00889420</string>
-											<string>53F579621115B82300889420</string>
-											<string>53F579641115B82300889420</string>
 											<string>53F5796F1115B9E200889420</string>
 											<string>53F579A61115BFEF00889420</string>
 											<string>53F579B71116331F00889420</string>
 											<string>53F579B91116331F00889420</string>
 											<string>53F579BC1116331F00889420</string>
-											<string>53F579BE1116331F00889420</string>
 											<string>53F579BF1116331F00889420</string>
 											<string>53F579C21116331F00889420</string>
-											<string>53F579D81116385300889420</string>
 											<string>53F57A9B111647BA00889420</string>
 											<string>53F57A9C111647BA00889420</string>
 											<string>53F57A9E111647BA00889420</string>
 											<string>53F57AF411164D8D00889420</string>
-											<string>53F57B7811165DDF00889420</string>
 											<string>53F57B8C11165E9200889420</string>
-											<string>53F57BC9111663D900889420</string>
 											<string>53F57BCA111663D900889420</string>
-											<string>53F57BCB111663D900889420</string>
 											<string>53F57BCC111663D900889420</string>
 											<string>53F57BCD111663D900889420</string>
-											<string>53F57BCE111663D900889420</string>
 											<string>53A14CD611169262004A5DA1</string>
-											<string>53A14CD711169262004A5DA1</string>
-											<string>53A14CDA11169262004A5DA1</string>
-											<string>53A14CDC11169262004A5DA1</string>
-											<string>53A14CE011169262004A5DA1</string>
-											<string>53A14DDA1116B999004A5DA1</string>
-											<string>53A14DDD1116B999004A5DA1</string>
-											<string>53A14DFC1116BBCA004A5DA1</string>
-											<string>53A14E101116BD4F004A5DA1</string>
-											<string>53A14E191116BF25004A5DA1</string>
 											<string>53A14E291116C160004A5DA1</string>
 											<string>53A14E2B1116C160004A5DA1</string>
 											<string>53A14E2C1116C160004A5DA1</string>
@@ -383,22 +377,44 @@
 											<string>53A14E2E1116C160004A5DA1</string>
 											<string>53A14E421116C5BC004A5DA1</string>
 											<string>53A14E431116C5BC004A5DA1</string>
-											<string>53A14E441116C5BC004A5DA1</string>
-											<string>53A14E451116C5BC004A5DA1</string>
-											<string>53A14E461116C5BC004A5DA1</string>
-											<string>53A14E471116C5BC004A5DA1</string>
-											<string>53A14E481116C5BC004A5DA1</string>
 											<string>53A14E4C1116C748004A5DA1</string>
-											<string>53A14E4D1116C748004A5DA1</string>
-											<string>53A14E6D1116CB2C004A5DA1</string>
-											<string>53A14E6E1116CB2C004A5DA1</string>
-											<string>53A14E6F1116CB2C004A5DA1</string>
 											<string>53A14E931116CE0C004A5DA1</string>
-											<string>53A14E991116D0D2004A5DA1</string>
-											<string>53A14E9A1116D0D2004A5DA1</string>
-											<string>53A14ECE1116D6AE004A5DA1</string>
 											<string>53A14F2F1116D841004A5DA1</string>
-											<string>53A14E8C1116CDC2004A5DA1</string>
+											<string>53A14F401116DBFF004A5DA1</string>
+											<string>53A14F411116DBFF004A5DA1</string>
+											<string>53A14F421116DBFF004A5DA1</string>
+											<string>53A14F491116DC27004A5DA1</string>
+											<string>53A14F7D1117EFA4004A5DA1</string>
+											<string>53A14F811117EFA4004A5DA1</string>
+											<string>53A14FBC1117F45B004A5DA1</string>
+											<string>53A14FC61117F5BC004A5DA1</string>
+											<string>53A14FE61117F862004A5DA1</string>
+											<string>53A14FED1117F999004A5DA1</string>
+											<string>53A150C011180E6D004A5DA1</string>
+											<string>53A150C111180E6D004A5DA1</string>
+											<string>53A150F411181558004A5DA1</string>
+											<string>53A1512E11181BE7004A5DA1</string>
+											<string>53A15170111822F0004A5DA1</string>
+											<string>53A15171111822F0004A5DA1</string>
+											<string>53A15172111822F0004A5DA1</string>
+											<string>53A1517E11182412004A5DA1</string>
+											<string>53A1520B1118303D004A5DA1</string>
+											<string>53A15220111831ED004A5DA1</string>
+											<string>53A15221111831ED004A5DA1</string>
+											<string>53A15227111833AB004A5DA1</string>
+											<string>53A15229111833AB004A5DA1</string>
+											<string>53A1523211183427004A5DA1</string>
+											<string>53A1523311183427004A5DA1</string>
+											<string>53A1523411183427004A5DA1</string>
+											<string>53A1523511183427004A5DA1</string>
+											<string>53A15242111834D9004A5DA1</string>
+											<string>53A15243111834D9004A5DA1</string>
+											<string>53A1527311183AD7004A5DA1</string>
+											<string>53A1528711183CB8004A5DA1</string>
+											<string>53A1529111183EC3004A5DA1</string>
+											<string>53A1529D11183FDA004A5DA1</string>
+											<string>53A152A311184095004A5DA1</string>
+											<string>53A152A411184095004A5DA1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -410,14 +426,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {819, 439}}</string>
+								<string>{{0, 0}, {819, 627}}</string>
 								<key>RubberWindowFrame</key>
-								<string>161 42 1113 673 0 0 1440 878 </string>
+								<string>240 106 1113 673 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>439pt</string>
+							<string>627pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -430,14 +446,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 444}, {819, 188}}</string>
+								<string>{{0, 632}, {819, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>161 42 1113 673 0 0 1440 878 </string>
+								<string>240 106 1113 673 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>188pt</string>
+							<string>0pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -599,13 +615,13 @@
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>53A14CE811169262004A5DA1</string>
 		<string>53A14CE911169262004A5DA1</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>53548FD0111424B300A4CAE3</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/leebyron/Code/openFrameworks/apps/phagos/phagos-osx/Phagos.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>161 42 1113 673 0 0 1440 878 </string>
+	<string>240 106 1113 673 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -628,7 +644,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ofxSDLAppWindow.cpp</string>
+								<string>Creature.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -839,12 +855,14 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CreatureCreator.cpp</string>
+										<string>PlayingGameState.cpp</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -865,8 +883,6 @@
 							<string>384pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -978,7 +994,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

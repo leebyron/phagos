@@ -14,6 +14,7 @@
 #include "GameManager.h"
 #include "PlayerManager.h"
 #include "Player.h"
+#include "ofOSX.h"
 
 //--------------------------------------------------------------
 void phagosApp::setup() {
@@ -25,7 +26,7 @@ void phagosApp::setup() {
   ofHideCursor();
 
   // data file
-  ofSetDataPathRoot("Resources/");
+  ofSetDataPathRoot(getResourcesPath() + "/");
 
 	ofSetFrameRate(60); // if vertical sync is off, we can go a bit fast... this caps the framerate at 60fps.
 }
@@ -50,7 +51,6 @@ void phagosApp::draw() {
 void phagosApp::keyPressed(int key) {
   // how many joysticks are there?
   int availableControllers = SDL_NumJoysticks();
-  printf("pressed avail controllers %i\n", availableControllers);
   
   bool hitKey = false;
   int device = 0;
@@ -75,7 +75,6 @@ void phagosApp::keyPressed(int key) {
 void phagosApp::keyReleased(int key) {
   // how many joysticks are there?
   int availableControllers = SDL_NumJoysticks();
-  printf("released avail controllers %i\n", availableControllers);
   
   bool hitKey = false;
   int device = 0;
@@ -102,7 +101,6 @@ void phagosApp::joyButtonPressed(int device, int button) {
   if (device >= 8) {
     return; // where did you these high numbered devices!?!
   }
-  printf("pressed on device %i\n", device);
   
   GameManager* gameManager     = GameManager::getManager();
   PlayerManager* playerManager = PlayerManager::getManager();
@@ -135,7 +133,6 @@ void phagosApp::joyButtonReleased(int device, int button) {
   if (device >= 8) {
     return; // where did you these high numbered devices?!?
   }
-  printf("released on device %i\n", device);
   
   GameManager* gameManager     = GameManager::getManager();
   PlayerManager* playerManager = PlayerManager::getManager();

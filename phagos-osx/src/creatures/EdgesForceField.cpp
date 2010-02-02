@@ -7,8 +7,9 @@
  *
  */
 
-#import "EdgesForceField.h"
-#import "GameManager.h"
+#include "EdgesForceField.h"
+#include "GameManager.h"
+#include "Creature.h"
 
 void EdgesForceField::update(ofxMSAParticle* p) {
   bool inGame = GameManager::getManager()->currentState == PLAYING_GAME;
@@ -18,12 +19,12 @@ void EdgesForceField::update(ofxMSAParticle* p) {
   if (!inGame) {
     restLength *= 2;
   }
-  
+
   deltaDistance = (*p) - (center);
-  
+
   // transform oval
   deltaDistance.y *= 2.0;
-  
+
   force = 0;
   deltaLength2 = msaLengthSquared(deltaDistance);
   if (deltaLength2 < restLength * restLength) {
@@ -32,14 +33,18 @@ void EdgesForceField::update(ofxMSAParticle* p) {
     deltaLength = sqrt(deltaLength2); //msaFastInvSquareRoot(deltaLength2);	// TODO: fast approximation of square root (1st order Taylor-expansion at a neighborhood of the rest length r (one Newton-Raphson iteration with initial guess r))
     force = (deltaLength - restLength) / (deltaLength);
   }
-  
+
   // nudge towards center
-  if (inGame) {
-    force += 0.20;
+  if (p->type == CREATURE_PARTICLE) {
+    if (inGame) {
+      force += 0.20;
+    } else {
+      force += 0.05;
+    }
   } else {
-    force += 0.05;
+    force *= 0.5;
   }
-  
+
   // un-transform oval
   deltaDistance.y *= 0.5;
   

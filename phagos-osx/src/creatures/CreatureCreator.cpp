@@ -38,6 +38,7 @@ CreatureCreator::CreatureCreator(Player* player) {
 }
 
 CreatureCreator::~CreatureCreator() {
+  //printf("bye creature creator\n");
 }
 
 void CreatureCreator::update() {
@@ -49,6 +50,12 @@ void CreatureCreator::update() {
   targetX = lastPlayer == 0 ? 0.5 : ((float)player->playerNum / lastPlayer);
   targetX = round(RING_RADIUS * 1.5 + targetX * (ofGetWidth() - RING_RADIUS * 3));
   player->origin.x += CONTROLLER_ANIMATOR * (targetX - player->origin.x);
+  
+  // if creature last made is dead, release it...
+  if (creature && creature->isDead()) {
+    creature->release();
+    creature = NULL;
+  }
 
   if (!(player->stillPlaying)) {
     return;
@@ -86,7 +93,14 @@ void CreatureCreator::pressed() {
 
   if (!creature || creature->stepsCompleted == 3) {
     remainingOoze -= NEW_CREATURE_COST;
+
+    // release existing last creature
+    if (creature) {
+      creature->release();
+    }
+
     creature = CreatureWorld::getWorld()->spawnCreature(player, 0, 0, 0);
+    creature->retain();
   }
 
   timePressed = ofGetElapsedTimef();

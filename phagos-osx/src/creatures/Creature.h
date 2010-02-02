@@ -11,6 +11,10 @@
 #include "ofxMSAPhysics.h"
 #include "Player.h"
 
+#define CREATURE_PARTICLE 0x123
+
+class Food;
+
 class Creature : public ofxMSAParticle {
 public:
 
@@ -19,12 +23,16 @@ public:
   
   // owner
   Player* player;
-  
+
   // Stats! the good stuff
   float   size;
   float   hunger;
   float   speed;
+  // how many have been constructed
   int stepsCompleted;
+  
+  // IN MAH BELLAY!
+  list<Food*> foods;
   
   // true if the creature is in the wild now
   bool    released;

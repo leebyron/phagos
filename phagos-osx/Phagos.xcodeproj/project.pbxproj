@@ -37,6 +37,9 @@
 		53558C1F1115073B0079191E /* ofxMSAUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53558C121115073B0079191E /* ofxMSAUtils.cpp */; };
 		53A14E601116CA75004A5DA1 /* EdgesForceField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53A14E5F1116CA75004A5DA1 /* EdgesForceField.cpp */; };
 		53A14F2A1116D822004A5DA1 /* phagos-icon.icns in CopyFiles */ = {isa = PBXBuildFile; fileRef = 53A14ED21116D6B7004A5DA1 /* phagos-icon.icns */; };
+		53A14F3B1116DBA3004A5DA1 /* ofOSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A14F3A1116DBA3004A5DA1 /* ofOSX.mm */; };
+		53A14F641117DABB004A5DA1 /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53A14F631117DABB004A5DA1 /* Food.cpp */; };
+		53A151C411182B42004A5DA1 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A151C311182B42004A5DA1 /* GLUT.framework */; };
 		53F571C61115124900889420 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53F571C51115124900889420 /* GameManager.cpp */; };
 		53F571CE1115181900889420 /* OpeningGameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53F571CD1115181900889420 /* OpeningGameState.cpp */; };
 		53F5720011151C7E00889420 /* IntroGameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53F571FE11151C7E00889420 /* IntroGameState.cpp */; };
@@ -227,12 +230,14 @@
 		53A14F111116D6B7004A5DA1 /* s-2_0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "s-2_0002.png"; sourceTree = "<group>"; };
 		53A14F121116D6B7004A5DA1 /* s-2_0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "s-2_0003.png"; sourceTree = "<group>"; };
 		53A14F131116D6B7004A5DA1 /* s-2_0004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "s-2_0004.png"; sourceTree = "<group>"; };
-		53A14F151116D6B7004A5DA1 /* ._science-portraits.ai */ = {isa = PBXFileReference; lastKnownFileType = file; path = "._science-portraits.ai"; sourceTree = "<group>"; };
-		53A14F161116D6B7004A5DA1 /* ._scientists.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ._scientists.png; sourceTree = "<group>"; };
-		53A14F171116D6B7004A5DA1 /* ._skeletists.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ._skeletists.png; sourceTree = "<group>"; };
 		53A14F181116D6B7004A5DA1 /* lab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lab.png; sourceTree = "<group>"; };
 		53A14F191116D6B7004A5DA1 /* scientists.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scientists.png; sourceTree = "<group>"; };
 		53A14F1A1116D6B7004A5DA1 /* skeletists.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeletists.png; sourceTree = "<group>"; };
+		53A14F391116DBA3004A5DA1 /* ofOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofOSX.h; sourceTree = "<group>"; };
+		53A14F3A1116DBA3004A5DA1 /* ofOSX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofOSX.mm; sourceTree = "<group>"; };
+		53A14F621117DABB004A5DA1 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		53A14F631117DABB004A5DA1 /* Food.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Food.cpp; sourceTree = "<group>"; };
+		53A151C311182B42004A5DA1 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		53F571C41115124900889420 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		53F571C51115124900889420 /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
 		53F571C71115163F00889420 /* GameStateInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateInstance.h; sourceTree = "<group>"; };
@@ -328,6 +333,7 @@
 				5354946D1114D3C000A4CAE3 /* freetype.a in Frameworks */,
 				5354946B1114D36500A4CAE3 /* libfmodex.dylib in Frameworks */,
 				E4C246DA10CCAE22004149E2 /* freeimage.a in Frameworks */,
+				53A151C411182B42004A5DA1 /* GLUT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +499,8 @@
 				53A14E5F1116CA75004A5DA1 /* EdgesForceField.cpp */,
 				53F57B1411164FFA00889420 /* CollisionForceField.h */,
 				53F57B281116567900889420 /* CollisionForceField.cpp */,
+				53A14F621117DABB004A5DA1 /* Food.h */,
+				53A14F631117DABB004A5DA1 /* Food.cpp */,
 			);
 			path = creatures;
 			sourceTree = "<group>";
@@ -678,9 +686,6 @@
 		53A14F141116D6B7004A5DA1 /* science */ = {
 			isa = PBXGroup;
 			children = (
-				53A14F151116D6B7004A5DA1 /* ._science-portraits.ai */,
-				53A14F161116D6B7004A5DA1 /* ._scientists.png */,
-				53A14F171116D6B7004A5DA1 /* ._skeletists.png */,
 				53A14F181116D6B7004A5DA1 /* lab.png */,
 				53A14F191116D6B7004A5DA1 /* scientists.png */,
 				53A14F1A1116D6B7004A5DA1 /* skeletists.png */,
@@ -837,6 +842,7 @@
 		E45BE5980E8CC70C009D7055 /* core frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53A151C311182B42004A5DA1 /* GLUT.framework */,
 				E4C2424410CC5A17004149E2 /* AppKit.framework */,
 				E4C2424510CC5A17004149E2 /* Cocoa.framework */,
 				E4C2424610CC5A17004149E2 /* IOKit.framework */,
@@ -876,6 +882,8 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				53A14F391116DBA3004A5DA1 /* ofOSX.h */,
+				53A14F3A1116DBA3004A5DA1 /* ofOSX.mm */,
 				53F5763411157EB300889420 /* Image.cpp */,
 				53F5763511157EB300889420 /* Image.h */,
 				53F57790111597EC00889420 /* phagosConstants.cpp */,
@@ -1050,6 +1058,8 @@
 				53F577D611159EA000889420 /* PhagosLogo.cpp in Sources */,
 				53F57B291116567900889420 /* CollisionForceField.cpp in Sources */,
 				53A14E601116CA75004A5DA1 /* EdgesForceField.cpp in Sources */,
+				53A14F3B1116DBA3004A5DA1 /* ofOSX.mm in Sources */,
+				53A14F641117DABB004A5DA1 /* Food.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1094,6 +1104,7 @@
 					"-lpthread",
 				);
 				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = ReleaseUniversal;
@@ -1164,7 +1175,7 @@
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = "../../../addons/**";
 				GCC_AUTO_VECTORIZATION = YES;
@@ -1173,6 +1184,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_UNROLL_LOOPS = YES;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
@@ -1188,8 +1200,12 @@
 					../../../libs/poco/include,
 				);
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CPLUSPLUSFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-lpthread",
+				);
 				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Debug;
@@ -1229,6 +1245,7 @@
 					"-lpthread",
 				);
 				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Release;

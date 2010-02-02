@@ -30,7 +30,24 @@ GameManager::GameManager() {
   currentState = INITIAL_GAME_STATE;
   currentStateInstance = NULL;
   
+  // load in the background
   backgroundImage = loadTexture("images/background.png", GL_BGR);
+  
+  // make a ring to use when things die
+  ring = new ofxMSAShape3D();
+  ring->begin(GL_TRIANGLE_STRIP);
+  float x,y,a;
+  float outerR = 1;
+  float innerR = 0.9;
+  float totalA = TWO_PI / (RING_RESOLUTION - 1);
+  for (int i = 0; i < RING_RESOLUTION; i++) {
+    a = totalA * i;
+    x = cos(a - HALF_PI);
+    y = sin(a - HALF_PI);
+    ring->addVertex(x * outerR, y * outerR);
+    ring->addVertex(x * innerR, y * innerR);
+  }
+  ring->end();
 }
 
 GameManager::~GameManager() {

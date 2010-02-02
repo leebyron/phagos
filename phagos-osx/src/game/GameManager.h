@@ -9,6 +9,7 @@
 
 #pragma once
 #include "GameStateInstance.h"
+#include "ofxMSAShape3D.h"
 
 typedef unsigned int GameState;
 static const GameState OPENING_SEQUENCE     = 0x1;  // Credit roll, played once when game is launched
@@ -28,6 +29,7 @@ public:
   GameStateInstance* currentStateInstance;
   
   GLuint backgroundImage;
+  ofxMSAShape3D* ring;
 
   void update();
   void draw();

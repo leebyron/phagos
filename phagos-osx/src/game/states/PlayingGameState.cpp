@@ -13,6 +13,7 @@
 #include "PlayerManager.h"
 #include "CreatureWorld.h"
 #include "Creature.h"
+#include "Food.h"
 #include "Image.h"
 #include "phagosConstants.h"
 
@@ -33,9 +34,18 @@ void PlayingGameState::update() {
   
   float elapsed = ofGetElapsedTimef() - timeStarted;
   
-  if (//elapsed > 300 || // TODO: should 5 minutes actually end the game?
+  float tillEndOfWorldNorm = (300 - elapsed) / 300;
+  
+  if (elapsed > 300 || // 5 minutes ends the game in a tie.
       (gameWasWon && ofGetElapsedTimef() - timeGameWasWon > 12.0)) {
     manager->setState(GAME_OVER);
+  }
+  
+  // --- should we spawn random shit? -------------------------
+  
+  // spawn foods, releasing less and less frequently as we approach death zone
+  if (ofRandomuf() < SPAWN_FOOD_PROBABILITY * tillEndOfWorldNorm) {
+    CreatureWorld::getWorld()->spawnFood();
   }
   
   // update creature creator
@@ -57,7 +67,7 @@ void PlayingGameState::update() {
   }
 
   if (playersAlive == 1 && !gameWasWon) {
-    printf("Multiplayer win condition met.");
+    printf("Multiplayer win condition met.\n");
     gameWasWon = true;
     timeGameWasWon = ofGetElapsedTimef();
   }
@@ -77,18 +87,29 @@ void PlayingGameState::draw() {
   CreatureWorld* world = CreatureWorld::getWorld();
   
   // draw all of the creatures on the screen please
-  list<Creature*>::iterator it;
+  list<Creature*>::iterator creatureIter;
   Creature* creature;
-  for (it=world->creatures.begin(); it!=world->creatures.end(); ++it) {
-    creature = *it;
+  for (creatureIter = world->creatures.begin(); creatureIter != world->creatures.end(); ++creatureIter) {
+    creature = *creatureIter;
+    if (creature->isDead()) {
+      printf("found a dead creature in my list?");
+    }
     creature->draw(1.0);
   }
-  
+
+  // draw all of the foods on the screen please
+  list<Food*>::iterator foodIter;
+  Food* food;
+  for (foodIter = world->foods.begin(); foodIter != world->foods.end(); ++foodIter) {
+    food = *foodIter;
+    food->draw();
+  }
+
   // draw all players' creators
   for (int i = 0; i < playerManager->numPlayers; i++) {
     playerManager->getPlayer(i)->creatureCreator->draw();
   }
-  
+
   // someone win? fade to black
   if (gameWasWon) {
     float fadeToBlack = sqAni((ofGetElapsedTimef() - (timeGameWasWon + 9.0)) / 3.0);
@@ -102,6 +123,9 @@ void PlayingGameState::draw() {
 
 void PlayingGameState::exit() {
   printf("play game state teardown\n");
+
+  CreatureWorld::getWorld()->resetWorld();
+  PlayerManager::getManager()->clearPlayers();
 }
 
 void PlayingGameState::pressed(Player* player) {

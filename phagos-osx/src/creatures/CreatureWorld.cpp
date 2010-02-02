@@ -43,14 +43,25 @@ CreatureWorld::~CreatureWorld() {
 }
 
 void CreatureWorld::resetWorld() {
-  // remove all critters
-  list<Creature*>::iterator it;
+  // remove all creatures
+  list<Creature*>::iterator creatureIter;
   Creature* creature;
-  for (it=creatures.begin(); it!=creatures.end(); ++it) {
-    creature = *it;
+  for (creatureIter = creatures.begin(); creatureIter != creatures.end(); ++creatureIter) {
+    creature = *creatureIter;
     creature->release();
   }
   creatures.clear();
+
+  // remove all foods
+  list<Food*>::iterator foodIter;
+  Food* food;
+  for (foodIter = foods.begin(); foodIter != foods.end(); ++foodIter) {
+    food = *foodIter;
+    //food->release();
+  }
+  foods.clear();
+
+  // clear physics
   physics->clear();
 }
 
@@ -58,15 +69,24 @@ void CreatureWorld::updateWorld() {
   physics->update(1);
 
   // remove creatures that are long since dead!
-  list<Creature*>::iterator it;
+  list<Creature*>::iterator it = creatures.begin();
   Creature* creature;
-  for (it=creatures.begin(); it!=creatures.end(); ++it) {
+  while (it != creatures.end()) {
     creature = *it;
     if (creature->isDead()) {
+      it = creatures.erase(it);
       creature->release();
-      creatures.erase(it);
+    } else {
+      it++;
     }
   }
+}
+
+Food* CreatureWorld::spawnFood() {
+  Food* food = new Food();
+  foods.push_back(food);
+  physics->addParticle(food);
+  food->release();
 }
 
 Creature* CreatureWorld::spawnCreature(Player* player,
@@ -75,10 +95,10 @@ Creature* CreatureWorld::spawnCreature(Player* player,
                                        float speed) {
   Creature* spawned = new Creature();
 
-  spawned->player       = player;
-  spawned->size         = size;
-  spawned->hunger    = hunger;
-  spawned->speed        = speed;
+  spawned->player   = player;
+  spawned->size     = size;
+  spawned->hunger   = hunger;
+  spawned->speed    = speed;
   
   spawned->setMass(1);
   // TODO: move if player is rogue
@@ -87,8 +107,10 @@ Creature* CreatureWorld::spawnCreature(Player* player,
   // count this as a reference increment
   spawned->retain();
   creatures.push_back(spawned);
-  
+
+  // add and dereference
   physics->addParticle(spawned);
-  
+  spawned->release();
+
   return spawned;
 }

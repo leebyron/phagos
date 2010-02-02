@@ -38,8 +38,8 @@
 #define RING_RADIUS 85.5
 
 // out of a total of 1 (=100%) per frame usage and recovery of ooze
-#define OOZE_USE_RATE 0.001
-#define OOZE_RECOVERY_RATE 0.001
+#define OOZE_USE_RATE 0.0015
+#define OOZE_RECOVERY_RATE 0.00125
 
 // the mag power of your creator
 #define CREATOR_MAGNIFICATION 0.4
@@ -49,6 +49,12 @@
 // size, hunger and speed and measured in Points
 #define POINTS_TO_OOZE 500
 
+
+#define FOOD_DESIRE 1.5
+// this is the sq(75)
+#define FOOD_DESIRE_OFFSET 5625
+#define CREATURE_DESIRE 1.0
+#define SPAWN_FOOD_PROBABILITY 0.004
 
 
 // the cost % of ooze to create a new creature
@@ -83,21 +89,41 @@
 // eatingSizePointsPerFrame = hunger * CREATURE_EATING_SPEED + CREATURE_EATING_MIN
 // if you want to destroy a 100 size cell with a 100 hunger in 5 seconds:
 // 100size = 60fps * 5sec * 100hunger * 0.003eatingspeed
-#define CREATURE_EATING_SPEED 0.0015
+#define CREATURE_EATING_SPEED 0.0012
 #define CREATURE_EATING_MIN 0.003
 
 // determines the maximum angle we can still eat something at
-#define CREATURE_EATING_ANGLE 0.003
+#define CREATURE_EATING_ANGLE 0.0025
 #define CREATURE_EATING_ANGLE_MIN 0.04
 
 // determines how many of the points eaten are regained
 #define POINTS_EATEN_EFFICIENCY 0.4
 
 // the distance you can be from your target and still eat
-#define NOM_DISTANCE 6
+#define NOM_DISTANCE 10
+
+
 
 // the amount of size to eat every frame just due to being alive
 #define PER_FRAME_METABOLISM 0.005
+
+
+
+// properties of foods
+#define TIME_FOR_FOOD_RIPPLE 0.6
+#define SIZE_OF_FOOD_RIPPLE 60
+#define FOOD_SIZE 6
+#define FOOD_RELEASED_SPEED 3.5
+#define FOOD_SPINNINESS 0.3
+#define FOOD_SPACING_IN_BELLY 1.3
+
+
+// sustinence for normal food
+#define FOOD_SIZE_POINTS 25
+#define FOOD_HUNGER_POINTS 2
+#define FOOD_SPEED_POINTS 2
+
+
 
 
 
@@ -109,7 +135,7 @@
 #endif
 
 #ifndef SQ
-  #define SQ(val) (val*val)
+  #define SQ(val) ((val)*(val))
 #endif
 
 float sqAni(float x);

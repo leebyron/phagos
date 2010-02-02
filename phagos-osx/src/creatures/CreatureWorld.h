@@ -8,8 +8,8 @@
  */
 
 #pragma once
-
 #include "Creature.h"
+#include "Food.h"
 #include "ofxMSAPhysics.h"
 #include "EdgesForceField.h"
 #include "CollisionForceField.h"
@@ -23,15 +23,16 @@ public:
 
   ofxMSAPhysics*  physics;
   list<Creature*> creatures;
-  
+  list<Food*>     foods;
+
   EdgesForceField* edgesForceField;
   CollisionForceField* collisionForceField;
 
   void resetWorld();
   void updateWorld();
+  Food* spawnFood();
   Creature* spawnCreature(Player* player,
                           float size,
                           float hunger,
                           float speed);
-
 };

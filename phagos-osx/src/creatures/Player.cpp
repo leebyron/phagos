@@ -34,10 +34,12 @@ Player::Player(int playerNum, int joyNum) {
 }
 
 Player::~Player() {
+  //printf("bye player.\n");
   creatureCreator->release();
 }
 
 void Player::gameOver() {
+  creatureCreator->creature = NULL;
   stillPlaying = false;
   creatureCreator->targetOpacity = 0.3;
   creatureCreator->remainingOoze = 0;
