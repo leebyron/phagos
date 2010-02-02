@@ -48,6 +48,14 @@ Creature::~Creature() {
 }
 
 
+
+void Creature::unleash() {
+  released = true;
+  makeFree();
+  player->creaturesInPlay++;
+  player->hadBegun = true;
+}
+
 // called every frame by the physics engine
 void Creature::update() {
   
@@ -321,11 +329,4 @@ void Creature::draw(float opacity = 1.0) {
   glPopMatrix(); // end drawing food
 
   glPopMatrix();
-}
-
-void Creature::unleash() {
-  released = true;
-  makeFree();
-  player->creaturesInPlay++;
-  player->hadBegun = true;
 }

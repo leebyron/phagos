@@ -9,6 +9,8 @@
 
 #include "GameStateInstance.h"
 
+class Player;
+
 class PlayingGameState : public GameStateInstance {
 public:
   
@@ -16,6 +18,7 @@ public:
   
   bool gameWasWon;
   float timeGameWasWon;
+  Player* roguePlayer;
   
   void setup();
   void update();
@@ -24,5 +27,9 @@ public:
   
   void pressed(Player* player);
   void released(Player* player);
+
+protected:
+  void checkForWinningCondition();
+  void spawnRandomElements();
   
 };

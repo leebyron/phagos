@@ -16,7 +16,9 @@ class Player : public ofxObjCPointer {
 public:
 
   Player(int playerNum, int joyNum);
+  Player();
   ~Player();
+  void init();
   
   int playerNum;
   int joyDeviceNum;

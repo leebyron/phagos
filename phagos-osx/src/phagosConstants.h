@@ -55,7 +55,7 @@
 #define FOOD_DESIRE_OFFSET 5625
 #define CREATURE_DESIRE 1.0
 #define SPAWN_FOOD_PROBABILITY 0.004
-
+#define SPAWN_ROGUE_PROBABILITY 0.005
 
 // the cost % of ooze to create a new creature
 #define NEW_CREATURE_COST 0.03

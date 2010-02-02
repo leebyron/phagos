@@ -19,60 +19,51 @@
 
 void PlayingGameState::setup() {
   printf("play game state setup\n");
-
+  ofBackground(0, 0, 0);
+  
   CreatureWorld::getWorld()->resetWorld();
 
   timeStarted = ofGetElapsedTimef();
   gameWasWon = false;
   timeGameWasWon = 0;
 
-  ofBackground(0, 0, 0);
+  roguePlayer = new Player();
 }
 
-void PlayingGameState::update() {
-  PlayerManager* playerManager = PlayerManager::getManager();
-  
-  float elapsed = ofGetElapsedTimef() - timeStarted;
-  
-  float tillEndOfWorldNorm = (300 - elapsed) / 300;
-  
-  if (elapsed > 300 || // 5 minutes ends the game in a tie.
-      (gameWasWon && ofGetElapsedTimef() - timeGameWasWon > 12.0)) {
+void PlayingGameState::exit() {
+  printf("play game state teardown\n");
+
+  CreatureWorld::getWorld()->resetWorld();
+  PlayerManager::getManager()->clearPlayers();
+  roguePlayer->release();
+}
+
+void PlayingGameState::update() {  
+  // switch at end of fade to black
+  if (gameWasWon && ofGetElapsedTimef() - timeGameWasWon > 12.0) {
     manager->setState(GAME_OVER);
   }
   
-  // --- should we spawn random shit? -------------------------
-  
-  // spawn foods, releasing less and less frequently as we approach death zone
-  if (ofRandomuf() < SPAWN_FOOD_PROBABILITY * tillEndOfWorldNorm) {
-    CreatureWorld::getWorld()->spawnFood();
-  }
-  
-  // update creature creator
+  // update creature creators
+  PlayerManager* playerManager = PlayerManager::getManager();
   Player* player;
   for (int i = 0; i < playerManager->numPlayers; i++) {
     player = playerManager->getPlayer(i);
     player->creatureCreator->update();
   }
+  
+  if (!gameWasWon) {
+    checkForWinningCondition();
+    
+    // should we spawn random shit?
+    spawnRandomElements();
+  }
 
+  // update world
   CreatureWorld::getWorld()->updateWorld();
-
-  // is there a winning condition?
-  int playersAlive = 0;
-  for (int i = 0; i < playerManager->numPlayers; i++) {
-    player = playerManager->getPlayer(i);
-    if (player->stillPlaying) {
-      playersAlive++;
-    }
-  }
-
-  if (playersAlive == 1 && !gameWasWon) {
-    printf("Multiplayer win condition met.\n");
-    gameWasWon = true;
-    timeGameWasWon = ofGetElapsedTimef();
-  }
 }
 
+// ------------------------------------------------------------------
 void PlayingGameState::draw() {
   GameManager* gameManager = GameManager::getManager();
   PlayerManager* playerManager = PlayerManager::getManager();
@@ -121,13 +112,6 @@ void PlayingGameState::draw() {
   }
 }
 
-void PlayingGameState::exit() {
-  printf("play game state teardown\n");
-
-  CreatureWorld::getWorld()->resetWorld();
-  PlayerManager::getManager()->clearPlayers();
-}
-
 void PlayingGameState::pressed(Player* player) {
   player->creatureCreator->targetLuminocity = 1.0;
   player->creatureCreator->pressed();
@@ -137,3 +121,91 @@ void PlayingGameState::released(Player* player) {
   player->creatureCreator->targetLuminocity = 0.0;
   player->creatureCreator->released();
 }
+
+// ==================================================================
+// Overarching Game Logic 
+// ==================================================================
+
+// ------------------------------------------------------------------
+void PlayingGameState::checkForWinningCondition() {
+  float elapsed = ofGetElapsedTimef() - timeStarted;
+  
+  // TODO: 5 minutes ends the game in a tie.
+  if (elapsed > 300) {
+    printf("Out of time, tie.\n");
+    gameWasWon = true;
+    timeGameWasWon = ofGetElapsedTimef();
+    return;
+  }
+
+  PlayerManager* playerManager = PlayerManager::getManager();
+  Player* player;
+
+  // check for multiplayer winning condition
+  if (playerManager->numPlayers > 1) {
+
+    int playersAlive = 0;
+    Player* lastRemaining = NULL;
+    for (int i = 0; i < playerManager->numPlayers; i++) {
+      player = playerManager->getPlayer(i);
+      if (player->stillPlaying) {
+        playersAlive++;
+        lastRemaining = player;
+      }
+    }
+
+    if (playersAlive == 0) {
+      printf("Destroyed by rogues.\n");
+      gameWasWon = true;
+      timeGameWasWon = ofGetElapsedTimef();
+      return;
+    } else if (playersAlive == 1) {
+      // TODO: lastRemaining vs rogue, what are the conditions to win then? similar to single player?
+      printf("Multiplayer win condition met.\n");
+      gameWasWon = true;
+      timeGameWasWon = ofGetElapsedTimef();
+      return;
+    }
+
+  } else { // check for singleplayer winning condition
+
+    // TODO: define the singleplayer game
+    printf("Singleplayer game not done yet");
+    gameWasWon = true;
+    timeGameWasWon = ofGetElapsedTimef();
+    return;
+  }
+}
+
+// ------------------------------------------------------------------
+void PlayingGameState::spawnRandomElements() {
+  float elapsed = ofGetElapsedTimef() - timeStarted;
+  float tillEndOfWorldNorm = (300 - elapsed) / 300;
+  
+  // spawn foods, releasing less and less frequently as we approach death zone
+  if (ofRandomuf() < SPAWN_FOOD_PROBABILITY * tillEndOfWorldNorm) {
+    CreatureWorld::getWorld()->spawnFood();
+  }
+  
+  // spawn rogues, releasing more and more frequently as we approach death zone
+  if (ofRandomuf() < SPAWN_ROGUE_PROBABILITY * (1 - tillEndOfWorldNorm)) {
+    Creature* creature = 
+    CreatureWorld::getWorld()->spawnCreature(roguePlayer,
+                                             100 * sqrt(ofRandomuf()),
+                                             100 * sqrt(ofRandomuf()),
+                                             100 * sqrt(ofRandomuf()));
+    float sideProb = ofRandomuf();
+    if (sideProb < 0.25) { // LEFT side
+      creature->x = -100;
+      creature->y = ofRandomuf() * (ofGetHeight() - 200);
+    } else if (sideProb < 0.75) { // TOP side
+      creature->x = ofRandomuf() * ofGetWidth();
+      creature->y = -100;
+    } else { // RIGHT side
+      creature->x = ofGetWidth() + 100;
+      creature->y = ofRandomuf() * (ofGetHeight() - 200);
+    }
+    creature->unleash();
+  }
+}
+

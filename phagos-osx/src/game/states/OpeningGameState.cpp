@@ -67,7 +67,7 @@ void OpeningGameState::draw() {
   }
   glPopMatrix();
   
-  if (frameNum >= 420) {
+  if (frameNum >= 375) {
     glPushMatrix();
     glTranslatef(ofGetWidth()*0.5, ofGetHeight()*0.5, 0);
     glScalef(512, 128, 1);

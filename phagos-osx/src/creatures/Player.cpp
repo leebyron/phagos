@@ -21,28 +21,48 @@ Player::Player(int playerNum, int joyNum) {
   creatureCreator = new CreatureCreator(this);
 
   // determine fancy things like color and placement
-  // TODO: these colors should be pre-computed based on Ash's designs
-  // and joysticks should always get the first colors, set the keyboard
-  // users to always use the last 3 available colors
   color.setHSV(hues[joyNum], 1, 1);
   origin.x = playerNum == 0 ? 512 : 1200;
   origin.y = 650;
 
+  init();
+}
+
+// this is probably a rogue
+Player::Player() {
+  this->playerNum     = -1;
+  this->joyDeviceNum  = -1;
+
+  // determine fancy things like color and placement
+  color.set(0.6, 0.6, 0.6);
+  //origin.x = playerNum == 0 ? 512 : 1200;
+  //origin.y = 650;
+
+  init();
+}
+
+Player::~Player() {
+  //printf("bye player.\n");
+  if (creatureCreator) {
+    creatureCreator->release();
+  }
+}
+
+void Player::init() {
   creaturesInPlay = 0;
   hadBegun = false;
   stillPlaying = true;
 }
 
-Player::~Player() {
-  //printf("bye player.\n");
-  creatureCreator->release();
-}
-
 void Player::gameOver() {
-  creatureCreator->creature = NULL;
+
   stillPlaying = false;
-  creatureCreator->targetOpacity = 0.3;
-  creatureCreator->remainingOoze = 0;
+
+  if (creatureCreator) {
+    creatureCreator->creature = NULL;
+    creatureCreator->targetOpacity = 0.3;
+    creatureCreator->remainingOoze = 0;
+  }
 
   // TODO: remove last creature in the creator ?
 }
