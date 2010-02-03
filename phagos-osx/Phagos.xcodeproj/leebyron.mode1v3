@@ -283,15 +283,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>17</integer>
-									<integer>15</integer>
+									<integer>31</integer>
 									<integer>14</integer>
 									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {272, 614}}</string>
+							<string>{{0, 94}, {272, 614}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -328,7 +327,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>OpeningGameState.cpp</string>
+								<string>GameManager.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -336,11 +335,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>OpeningGameState.cpp</string>
+										<string>GameManager.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>53BE15581118CA34002264BC</string>
+										<string>53BE158911195E68002264BC</string>
 										<key>history</key>
 										<array>
 											<string>53558C2711150BB20079191E</string>
@@ -387,9 +386,7 @@
 											<string>53A14FED1117F999004A5DA1</string>
 											<string>53A150C011180E6D004A5DA1</string>
 											<string>53A150C111180E6D004A5DA1</string>
-											<string>53A150F411181558004A5DA1</string>
 											<string>53A1512E11181BE7004A5DA1</string>
-											<string>53A15170111822F0004A5DA1</string>
 											<string>53A15171111822F0004A5DA1</string>
 											<string>53A15172111822F0004A5DA1</string>
 											<string>53A1517E11182412004A5DA1</string>
@@ -400,22 +397,24 @@
 											<string>53A1523311183427004A5DA1</string>
 											<string>53A1523511183427004A5DA1</string>
 											<string>53A15242111834D9004A5DA1</string>
-											<string>53A1527311183AD7004A5DA1</string>
-											<string>53A1529D11183FDA004A5DA1</string>
 											<string>53A152A311184095004A5DA1</string>
 											<string>53BE152B11184552002264BC</string>
 											<string>53BE152C11184552002264BC</string>
 											<string>53BE15431118C891002264BC</string>
 											<string>53BE15441118C891002264BC</string>
-											<string>53BE15451118C891002264BC</string>
 											<string>53BE15461118C891002264BC</string>
-											<string>53BE15481118C891002264BC</string>
 											<string>53BE15491118C891002264BC</string>
-											<string>53BE154A1118C891002264BC</string>
 											<string>53BE154B1118C891002264BC</string>
 											<string>53BE154C1118C891002264BC</string>
-											<string>53BE15561118CA34002264BC</string>
-											<string>53BE15571118CA34002264BC</string>
+											<string>53BE155F11194BCD002264BC</string>
+											<string>53BE156011194BCD002264BC</string>
+											<string>53BE156B111959DB002264BC</string>
+											<string>53BE156C111959DB002264BC</string>
+											<string>53BE156F111959DB002264BC</string>
+											<string>53BE157611195C38002264BC</string>
+											<string>53BE157711195C38002264BC</string>
+											<string>53BE158711195E68002264BC</string>
+											<string>53BE158811195E68002264BC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -613,7 +612,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>53BE15591118CA34002264BC</string>
+		<string>53BE158A11195E68002264BC</string>
 		<string>53BE152F11184552002264BC</string>
 		<string>53BE153011184552002264BC</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -645,7 +644,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PlayingGameState.cpp</string>
+								<string>Creature.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -962,7 +961,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {561, 498}}</string>
 								<key>RubberWindowFrame</key>
-								<string>8 195 561 539 0 0 1440 878 </string>
+								<string>88 220 561 539 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -991,7 +990,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>8 195 561 539 0 0 1440 878 </string>
+			<string>88 220 561 539 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

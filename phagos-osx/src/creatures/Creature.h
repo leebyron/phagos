@@ -36,7 +36,11 @@ public:
   
   // true if the creature is in the wild now
   bool    released;
+  float   timeReleased;
+  
   bool    wasKilled;
+  float   timeKilled;
+  bool    wasLastOfKind;
   
   bool    isEating;
 
@@ -47,7 +51,8 @@ public:
 
   void update();
   void draw(float opacity);
-  
+
   void unleash();
+  void eatenBy(Creature* enemy);
 
 };

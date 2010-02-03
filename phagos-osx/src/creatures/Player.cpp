@@ -33,6 +33,9 @@ Player::Player() {
   this->playerNum     = -1;
   this->joyDeviceNum  = -1;
 
+  // no creature creator needed, plz!
+  creatureCreator = NULL;
+
   // determine fancy things like color and placement
   color.set(0.6, 0.6, 0.6);
   //origin.x = playerNum == 0 ? 512 : 1200;
@@ -42,7 +45,7 @@ Player::Player() {
 }
 
 Player::~Player() {
-  //printf("bye player.\n");
+  printf("bye player.\n");
   if (creatureCreator) {
     creatureCreator->release();
   }

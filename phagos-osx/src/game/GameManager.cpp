@@ -38,7 +38,7 @@ GameManager::GameManager() {
   ring->begin(GL_TRIANGLE_STRIP);
   float x,y,a;
   float outerR = 1;
-  float innerR = 0.9;
+  float innerR = 0.8;
   float totalA = TWO_PI / (RING_RESOLUTION - 1);
   for (int i = 0; i < RING_RESOLUTION; i++) {
     a = totalA * i;

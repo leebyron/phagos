@@ -108,10 +108,16 @@
 #define PER_FRAME_METABOLISM 0.005
 
 
+// creature ripple
+#define TIME_FOR_CREATURE_RIPPLE 1.5
+#define SIZE_OF_CREATURE_RIPPLE 100
+
+
 
 // properties of foods
 #define TIME_FOR_FOOD_RIPPLE 0.6
-#define SIZE_OF_FOOD_RIPPLE 60
+#define SIZE_OF_FOOD_RIPPLE 45
+
 #define FOOD_SIZE 6
 #define FOOD_RELEASED_SPEED 3.5
 #define FOOD_SPINNINESS 0.3
